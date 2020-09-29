@@ -1,0 +1,27 @@
+﻿<Window x:Class="GestaoRHWPF.Views.frmPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoRHWPF.Views"
+        mc:Ignorable="d"
+        Title="GestaoRH WPF" Height="510" Width="876" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="800">
+            <MenuItem Header="_Arquivo">
+                <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Cadastrar">
+                <MenuItem x:Name="menuCadastrarFuncionario" Header="_Funcionario" Click="menuCadastrarFuncionario_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Buscar">
+                <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Remover">
+                <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Sobre"/>
+        </Menu>
+
+    </Grid>
+</Window>

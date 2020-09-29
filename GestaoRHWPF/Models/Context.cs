@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 
-namespace GestaoRHConsole.Models
+using Microsoft.EntityFrameworkCore;
+
+namespace GestaoRHWPF.Models
 {
     class Context : DbContext
     {
@@ -10,7 +12,7 @@ namespace GestaoRHConsole.Models
         {
             optionsBuilder.UseSqlServer
                 (@"Server=(localdb)\mssqllocaldb;
-                    Database=GestaoRHConsole;
+                    Database=GestaoRHWPF;
                     Trusted_Connection=true");
         }
     }
