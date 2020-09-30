@@ -6,7 +6,7 @@ namespace GestaoRHWPF.DAL
 {
     class ProntuarioDAO
     {
-        private static Context _context = new Context();
+        private static Context _context = SingletonContext.GetInstance();
 
         public static Prontuario BuscarPorMatriculaP(string matricula) =>
             _context.Prontuarios.FirstOrDefault(x => x.Funcionario.Matricula == matricula);

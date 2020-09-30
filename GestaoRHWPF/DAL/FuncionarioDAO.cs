@@ -7,7 +7,7 @@ namespace GestaoRHWPF.DAL
     class FuncionarioDAO
     {
 
-        private static Context _context = new Context();
+        private static Context _context = SingletonContext.GetInstance();
 
         public static Funcionario BuscarPorMatricula(string matricula) =>
             _context.Funcionarios.FirstOrDefault(x => x.Matricula == matricula);

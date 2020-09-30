@@ -6,7 +6,7 @@ namespace GestaoRHWPF.DAL
 {
     class CaixaDAO
     {
-        private static Context _context = new Context();
+        private static Context _context = SingletonContext.GetInstance();
 
         public static Caixa BuscarPorNumeroCaixa(string numeroCaixa) =>
             _context.Caixas.FirstOrDefault(x => x.NumeroCaixa == numeroCaixa);
