@@ -34,6 +34,7 @@ namespace GestaoRHWPF.Views.Cadastrar
                 else
                 {
                     MessageBox.Show("Este funcionário já existe!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LimparFormulario();
                 }
             }
             else

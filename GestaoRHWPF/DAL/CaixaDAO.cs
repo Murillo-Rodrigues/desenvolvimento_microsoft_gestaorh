@@ -10,6 +10,8 @@ namespace GestaoRHWPF.DAL
 
         public static Caixa BuscarPorNumeroCaixa(string numeroCaixa) =>
             _context.Caixas.FirstOrDefault(x => x.NumeroCaixa == numeroCaixa);
+        public static Caixa BuscarPorId(int id) =>
+            _context.Caixas.FirstOrDefault(x => x.Id == id);
 
         public static bool Cadastrar(Caixa caixa)
         {

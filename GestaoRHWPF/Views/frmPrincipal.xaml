@@ -14,6 +14,7 @@
             <MenuItem Header="_Cadastrar">
                 <MenuItem x:Name="menuCadastrarFuncionario" Header="_Funcionario" Click="menuCadastrarFuncionario_Click"/>
                 <MenuItem x:Name="menuCadastrarCaixa" Header="_Caixa" Click="menuCadastrarCaixa_Click"/>
+                <MenuItem x:Name="menuCadastrarProntuario" Header="_Prontuario" Click="menuCadastrarProntuario_Click"/>
             </MenuItem>
             <MenuItem Header="_Buscar">
                 <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click"/>

@@ -24,7 +24,7 @@
         <Label Content="(A-Z)" HorizontalAlignment="Left" Margin="406,133,0,0" VerticalAlignment="Top"/>
         <Label Content="(1-10)" HorizontalAlignment="Left" Margin="406,164,0,0" VerticalAlignment="Top"/>
         <Label Content="(1-4)" HorizontalAlignment="Left" Margin="406,195,0,0" VerticalAlignment="Top"/>
-        <Button Content="Cadastrar Caixa" HorizontalAlignment="Left" Margin="228,284,0,0" VerticalAlignment="Top" Height="42" Width="102" TabIndex="5" Click="Button_Click"/>
+        <Button x:Name="btnCadastrarCaixa" Content="Cadastrar Caixa" HorizontalAlignment="Left" Margin="228,284,0,0" VerticalAlignment="Top" Height="42" Width="102" TabIndex="5" Click="btnCadastrarCaixa_Click" />
 
     </Grid>
 </Window>

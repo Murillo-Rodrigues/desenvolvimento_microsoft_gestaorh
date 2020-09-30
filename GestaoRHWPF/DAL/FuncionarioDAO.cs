@@ -11,6 +11,8 @@ namespace GestaoRHWPF.DAL
 
         public static Funcionario BuscarPorMatricula(string matricula) =>
             _context.Funcionarios.FirstOrDefault(x => x.Matricula == matricula);
+        public static Funcionario BuscarPorId(int id) =>
+            _context.Funcionarios.FirstOrDefault(x => x.Id == id);
 
         public static bool Cadastrar(Funcionario funcionario)
         {

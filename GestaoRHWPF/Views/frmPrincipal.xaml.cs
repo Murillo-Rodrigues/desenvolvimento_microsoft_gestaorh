@@ -63,5 +63,11 @@ namespace GestaoRHWPF.Views
             frmRemoverCaixa frmremovercaixa = new frmRemoverCaixa();
             frmremovercaixa.Show();
         }
+
+        private void menuCadastrarProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            frmCadastrarProntuario frmcadastrarprontuario = new frmCadastrarProntuario();
+            frmcadastrarprontuario.Show();
+        }
     }
 }

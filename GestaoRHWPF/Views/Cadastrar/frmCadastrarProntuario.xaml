@@ -1,0 +1,21 @@
+﻿<Window x:Class="GestaoRHWPF.Views.Cadastrar.frmCadastrarProntuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoRHWPF.Views.Cadastrar"
+        mc:Ignorable="d"
+        Title="frmCadastrarProntuario" Height="347" Width="555" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="cboFuncionarios" HorizontalAlignment="Left" Margin="38,61,0,0" VerticalAlignment="Top" Width="175" Height="27" FontSize="16"/>
+        <ComboBox x:Name="cboCaixas" HorizontalAlignment="Left" Margin="333,61,0,0" VerticalAlignment="Top" Width="175" Height="27" FontSize="16"/>
+        <Button x:Name="btnCadastrarProntuario" Content="Cadastrar Prontuário" HorizontalAlignment="Center" Margin="0,216,0,0" VerticalAlignment="Top" Height="54" Width="139" Click="btnCadastrarProntuario_Click"/>
+        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="20,22,0,0" VerticalAlignment="Top"/>
+        <Label Content="Selecione o número da caixa:" HorizontalAlignment="Left" Margin="339,22,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="60,136,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="345,136,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="38,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
+        <TextBox x:Name="txtCorredor_Estante_Altura" HorizontalAlignment="Left" Margin="333,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
+
+    </Grid>
+</Window>

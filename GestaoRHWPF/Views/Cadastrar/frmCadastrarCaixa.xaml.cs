@@ -15,7 +15,7 @@ namespace GestaoRHWPF.Views.Cadastrar
             txtNumeroCaixa.Focus();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnCadastrarCaixa_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text))
             {
@@ -45,6 +45,7 @@ namespace GestaoRHWPF.Views.Cadastrar
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
         private void LimparFormulario()
         {
             txtId.Clear();
@@ -55,5 +56,6 @@ namespace GestaoRHWPF.Views.Cadastrar
             txtCriadoEm.Clear();
             txtNumeroCaixa.Focus();
         }
+
     }
 }

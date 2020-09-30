@@ -9,6 +9,8 @@ namespace GestaoRHWPF.Models
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
 
+        public DbSet<Prontuario> Prontuarios { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer

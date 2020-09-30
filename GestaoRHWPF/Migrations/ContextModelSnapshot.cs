@@ -69,6 +69,42 @@ namespace GestaoRHWPF.Migrations
 
                     b.ToTable("Funcionários");
                 });
+
+            modelBuilder.Entity("GestaoRHWPF.Models.Prontuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CaixaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("FuncionarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaixaId");
+
+                    b.HasIndex("FuncionarioId");
+
+                    b.ToTable("Prontuarios");
+                });
+
+            modelBuilder.Entity("GestaoRHWPF.Models.Prontuario", b =>
+                {
+                    b.HasOne("GestaoRHWPF.Models.Caixa", "Caixa")
+                        .WithMany()
+                        .HasForeignKey("CaixaId");
+
+                    b.HasOne("GestaoRHWPF.Models.Funcionario", "Funcionario")
+                        .WithMany()
+                        .HasForeignKey("FuncionarioId");
+                });
 #pragma warning restore 612, 618
         }
     }
