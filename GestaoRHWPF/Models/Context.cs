@@ -7,6 +7,7 @@ namespace GestaoRHWPF.Models
     class Context : DbContext
     {
         public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Caixa> Caixas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

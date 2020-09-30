@@ -13,9 +13,11 @@
             </MenuItem>
             <MenuItem Header="_Cadastrar">
                 <MenuItem x:Name="menuCadastrarFuncionario" Header="_Funcionario" Click="menuCadastrarFuncionario_Click"/>
+                <MenuItem x:Name="menuCadastrarCaixa" Header="_Caixa" Click="menuCadastrarCaixa_Click"/>
             </MenuItem>
             <MenuItem Header="_Buscar">
                 <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click"/>
+                <MenuItem x:Name="menuBuscarCaixa" Header="_Caixa" Click="menuBuscarCaixa_Click"/>
             </MenuItem>
             <MenuItem Header="_Remover">
                 <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click"/>
