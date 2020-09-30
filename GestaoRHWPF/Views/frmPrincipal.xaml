@@ -21,6 +21,7 @@
             </MenuItem>
             <MenuItem Header="_Remover">
                 <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click"/>
+                <MenuItem x:Name="menuRemoverCaixa" Header="_Caixa" Click="menuRemoverCaixa_Click"/>
             </MenuItem>
             <MenuItem Header="_Sobre"/>
         </Menu>

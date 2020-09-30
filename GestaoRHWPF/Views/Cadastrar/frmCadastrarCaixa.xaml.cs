@@ -24,7 +24,7 @@ namespace GestaoRHWPF.Views.Cadastrar
                     NumeroCaixa = txtNumeroCaixa.Text,
                     PosicaoCorredor = txtPosicaoCorredor.Text,
                     PosicaoEstante = txtPosicaoEstante.Text,
-                    PosicaoAltura = txtAlturaEstante.Text
+                    PosicaoAltura = txtPosicaoAltura.Text
                 };
 
                 if (CaixaDAO.Cadastrar(caixa))
@@ -51,7 +51,7 @@ namespace GestaoRHWPF.Views.Cadastrar
             txtNumeroCaixa.Clear();
             txtPosicaoCorredor.Clear();
             txtPosicaoEstante.Clear();
-            txtAlturaEstante.Clear();
+            txtPosicaoAltura.Clear();
             txtCriadoEm.Clear();
             txtNumeroCaixa.Focus();
         }

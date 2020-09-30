@@ -15,32 +15,6 @@ namespace GestaoRHWPF.Views.Remover
             InitializeComponent();
             txtMatricula.Focus();
         }
-
-        private void btnRemover_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtMatricula.Text))
-            {
-                funcionario = new Funcionario();
-
-                funcionario = FuncionarioDAO.BuscarPorMatricula(txtMatricula.Text);
-
-                if (funcionario != null)
-                {
-                    FuncionarioDAO.Remover(funcionario);
-                    MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Funcionários",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
-                    LimparFormulario();
-                    btnRemover.IsEnabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("O funcionário não existe!", "Remoção de Funcionários",
-                        MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-            }
-        }
-
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(txtMatricula.Text))
@@ -61,7 +35,43 @@ namespace GestaoRHWPF.Views.Remover
                         MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Preencha o campo MATRÍCULA!", "Remoção de Funcionários",
+                       MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtMatricula.Text))
+            {
+                //funcionario = new Funcionario();
+
+                funcionario = FuncionarioDAO.BuscarPorMatricula(txtMatricula.Text);
+
+                if (funcionario != null)
+                {
+                    FuncionarioDAO.Remover(funcionario);
+                    MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Funcionários",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    LimparFormulario();
+                    btnRemover.IsEnabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("O funcionário não existe!", "Remoção de Funcionários",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Preencha o campo MATRÍCULA!", "Remoção de Funcionários",
+                       MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
 
         private void LimparFormulario()
         {

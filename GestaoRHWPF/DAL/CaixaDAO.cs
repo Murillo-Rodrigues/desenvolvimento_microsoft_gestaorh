@@ -23,6 +23,12 @@ namespace GestaoRHWPF.DAL
             return false;
         }
 
+        public static void Remover(Caixa caixa)
+        {
+            _context.Caixas.Remove(caixa);
+            _context.SaveChanges();
+        }
+
         public static List<Caixa> Listar() => _context.Caixas.ToList();
     }
 }

@@ -57,5 +57,11 @@ namespace GestaoRHWPF.Views
             frmBuscarCaixa frmbuscarcaixa = new frmBuscarCaixa();
             frmbuscarcaixa.Show();
         }
+
+        private void menuRemoverCaixa_Click(object sender, RoutedEventArgs e)
+        {
+            frmRemoverCaixa frmremovercaixa = new frmRemoverCaixa();
+            frmremovercaixa.Show();
+        }
     }
 }
