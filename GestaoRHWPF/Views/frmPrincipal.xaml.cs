@@ -1,6 +1,7 @@
 ﻿using GestaoRHWPF.Views.Buscar;
 using GestaoRHWPF.Views.Cadastrar;
 using GestaoRHWPF.Views.Remover;
+using GestaoRHWPF.Views.Solicitar;
 using System.Windows;
 
 namespace GestaoRHWPF.Views
@@ -80,6 +81,12 @@ namespace GestaoRHWPF.Views
         {
             frmRemoverProntuario frmremoverprontuario = new frmRemoverProntuario();
             frmremoverprontuario.Show();
+        }
+
+        private void menuSolicitarProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            frmSolicitarProntuario frmsolicitarprontuario = new frmSolicitarProntuario();
+            frmsolicitarprontuario.Show();
         }
     }
 }

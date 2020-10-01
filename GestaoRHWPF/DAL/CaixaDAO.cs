@@ -12,6 +12,8 @@ namespace GestaoRHWPF.DAL
             _context.Caixas.FirstOrDefault(x => x.NumeroCaixa == numeroCaixa);
         public static Caixa BuscarPorId(int id) =>
             _context.Caixas.FirstOrDefault(x => x.Id == id);
+        public static Prontuario BuscarPorIdCaixaNoProntuario(int id) =>
+           _context.Prontuarios.FirstOrDefault(x => x.Caixa.Id == id);
 
         public static bool Cadastrar(Caixa caixa)
         {
@@ -25,10 +27,15 @@ namespace GestaoRHWPF.DAL
             return false;
         }
 
-        public static void Remover(Caixa caixa)
+        public static bool Remover(Caixa caixa)
         {
-            _context.Caixas.Remove(caixa);
-            _context.SaveChanges();
+            if (BuscarPorIdCaixaNoProntuario(caixa.Id) == null)
+            {
+                _context.Caixas.Remove(caixa);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public static List<Caixa> Listar() => _context.Caixas.ToList();

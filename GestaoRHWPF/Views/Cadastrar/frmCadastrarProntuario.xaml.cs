@@ -77,10 +77,15 @@ namespace GestaoRHWPF.Views.Cadastrar
                 }
                 else
                 {
-                    MessageBox.Show("É necessário selecionar os dados primeiro!", "Cadastro de Prontuários",
+                    MessageBox.Show("Dados não encontrados!", "Cadastro de Prontuários",
                            MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("É necessário selecionar os dados primeiro!", "Cadastro de Prontuários",
+                           MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }

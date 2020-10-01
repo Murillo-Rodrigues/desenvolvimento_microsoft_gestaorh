@@ -1,5 +1,8 @@
-﻿namespace GestaoRHWPF.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GestaoRHWPF.Models
 {
+    [Table("Prontuarios")]
     class Prontuario : BaseModel
     {
         public Prontuario()

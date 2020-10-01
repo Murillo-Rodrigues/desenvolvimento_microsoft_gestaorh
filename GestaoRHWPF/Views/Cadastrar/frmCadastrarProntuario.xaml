@@ -17,7 +17,7 @@
         <ComboBox x:Name="cboCaixas" HorizontalAlignment="Left" Margin="398,118,0,0" VerticalAlignment="Top" Width="195" Height="27" FontSize="16" DropDownClosed="cboCaixas_DropDownClosed"/>
         <Button x:Name="btnCadastrarProntuario" Content="Cadastrar Prontuário" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Height="54" Width="139" Click="btnCadastrarProntuario_Click"/>
         <Label Content="Cadastro de Prontuários" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Foreground="White" FontSize="17" FontWeight="Medium"/>
-        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="34,79,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="39,79,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label Content="Selecione o número da caixa:" HorizontalAlignment="Left" Margin="414,79,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="74,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
         <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="421,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>

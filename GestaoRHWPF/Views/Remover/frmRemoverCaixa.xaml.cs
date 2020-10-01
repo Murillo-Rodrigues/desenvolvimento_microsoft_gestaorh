@@ -51,10 +51,17 @@ namespace GestaoRHWPF.Views.Remover
         {
             if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text))
             {
-                CaixaDAO.Remover(caixa);
-                MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Caixas",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
+                if (CaixaDAO.Remover(caixa))
+                {
+                    MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Caixas",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                    LimparFormulario();
+                }
+                else
+                {
+                    MessageBox.Show("Não é possivel remover uma caixa com dados dentro!", "Remoção de Caixas",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {

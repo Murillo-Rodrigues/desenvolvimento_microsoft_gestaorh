@@ -11,6 +11,9 @@ namespace GestaoRHWPF.DAL
 
         public static Prontuario BuscarPorMatriculaP(string matricula) =>
             _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Matricula == matricula);
+        public static Prontuario BuscarPorIdP(int id) =>
+           _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Id == id);
+
 
         public static bool Cadastrar(Prontuario prontuario)
         {

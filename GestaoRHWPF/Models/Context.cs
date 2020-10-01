@@ -10,6 +10,7 @@ namespace GestaoRHWPF.Models
         public DbSet<Caixa> Caixas { get; set; }
 
         public DbSet<Prontuario> Prontuarios { get; set; }
+        public DbSet<Solicitacao> Solicitacoes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

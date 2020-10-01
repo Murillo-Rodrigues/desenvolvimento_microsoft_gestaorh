@@ -29,7 +29,10 @@
                 <MenuItem x:Name="menuRemoverCaixa" Header="_Caixa" Click="menuRemoverCaixa_Click"/>
                 <MenuItem x:Name="menuRemoverProntuario" Header="_Prontuario" Click="menuRemoverProntuario_Click" />
             </MenuItem>
-            <MenuItem Header="_Sobre"/>
+            <MenuItem Header="_Solicitar">
+                <MenuItem x:Name="menuSolicitarProntuario" Header="_Prontuario" Click="menuSolicitarProntuario_Click"/>
+            </MenuItem>
+            <MenuItem Header="S_obre"/>
         </Menu>
 
     </Grid>
