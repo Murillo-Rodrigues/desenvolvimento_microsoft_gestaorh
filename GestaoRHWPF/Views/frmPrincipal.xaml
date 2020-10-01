@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:GestaoRHWPF.Views"
         mc:Ignorable="d"
         Title="GestaoRH WPF" Height="510" Width="876" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="/Views/2.jpg" Stretch="Fill"/>
+    </Window.Background>
     <Grid>
-        <Menu VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="800">
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="20" Width="876">
             <MenuItem Header="_Arquivo">
                 <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
             </MenuItem>
@@ -19,10 +22,12 @@
             <MenuItem Header="_Buscar">
                 <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click"/>
                 <MenuItem x:Name="menuBuscarCaixa" Header="_Caixa" Click="menuBuscarCaixa_Click"/>
+                <MenuItem x:Name="menuBuscarProntuario" Header="_Prontuario" Click="menuBuscarProntuario_Click"/>
             </MenuItem>
             <MenuItem Header="_Remover">
                 <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click"/>
                 <MenuItem x:Name="menuRemoverCaixa" Header="_Caixa" Click="menuRemoverCaixa_Click"/>
+                <MenuItem x:Name="menuRemoverProntuario" Header="_Prontuario" Click="menuRemoverProntuario_Click" />
             </MenuItem>
             <MenuItem Header="_Sobre"/>
         </Menu>

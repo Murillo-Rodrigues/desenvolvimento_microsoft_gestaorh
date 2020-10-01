@@ -69,5 +69,17 @@ namespace GestaoRHWPF.Views
             frmCadastrarProntuario frmcadastrarprontuario = new frmCadastrarProntuario();
             frmcadastrarprontuario.Show();
         }
+
+        private void menuBuscarProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            frmBuscarProntuario frmbuscarprontuario = new frmBuscarProntuario();
+            frmbuscarprontuario.Show();
+        }
+
+        private void menuRemoverProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            frmRemoverProntuario frmremoverprontuario = new frmRemoverProntuario();
+            frmremoverprontuario.Show();
+        }
     }
 }

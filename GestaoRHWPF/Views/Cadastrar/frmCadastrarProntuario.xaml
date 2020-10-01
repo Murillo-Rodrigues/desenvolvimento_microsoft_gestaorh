@@ -5,17 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Cadastrar"
         mc:Ignorable="d"
-        Title="frmCadastrarProntuario" Height="347" Width="555" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Prontuários" Height="362" Width="628" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FF0069B2" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <ComboBox x:Name="cboFuncionarios" HorizontalAlignment="Left" Margin="38,61,0,0" VerticalAlignment="Top" Width="175" Height="27" FontSize="16"/>
-        <ComboBox x:Name="cboCaixas" HorizontalAlignment="Left" Margin="333,61,0,0" VerticalAlignment="Top" Width="175" Height="27" FontSize="16"/>
-        <Button x:Name="btnCadastrarProntuario" Content="Cadastrar Prontuário" HorizontalAlignment="Center" Margin="0,216,0,0" VerticalAlignment="Top" Height="54" Width="139" Click="btnCadastrarProntuario_Click"/>
-        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="20,22,0,0" VerticalAlignment="Top"/>
-        <Label Content="Selecione o número da caixa:" HorizontalAlignment="Left" Margin="339,22,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="60,136,0,0" VerticalAlignment="Top" IsEnabled="False"/>
-        <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="345,136,0,0" VerticalAlignment="Top" IsEnabled="False"/>
-        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="38,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
-        <TextBox x:Name="txtCorredor_Estante_Altura" HorizontalAlignment="Left" Margin="333,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
+        <ComboBox x:Name="cboFuncionarios" HorizontalAlignment="Left" Margin="44,118,0,0" VerticalAlignment="Top" Width="195" Height="27" FontSize="16" DropDownClosed="cboFuncionarios_DropDownClosed"/>
+        <ComboBox x:Name="cboCaixas" HorizontalAlignment="Left" Margin="398,118,0,0" VerticalAlignment="Top" Width="195" Height="27" FontSize="16" DropDownClosed="cboCaixas_DropDownClosed"/>
+        <Button x:Name="btnCadastrarProntuario" Content="Cadastrar Prontuário" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Height="54" Width="139" Click="btnCadastrarProntuario_Click"/>
+        <Label Content="Cadastro de Prontuários" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Foreground="White" FontSize="17" FontWeight="Medium"/>
+        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="34,79,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Selecione o número da caixa:" HorizontalAlignment="Left" Margin="414,79,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="74,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
+        <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="421,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
+        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="44,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
+        <TextBox x:Name="txtCorredor_Estante_Altura" HorizontalAlignment="Left" Margin="398,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="15" FontWeight="Medium" Background="White"/>
 
     </Grid>
 </Window>

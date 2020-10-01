@@ -1,4 +1,5 @@
 ﻿using GestaoRHWPF.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,7 +10,7 @@ namespace GestaoRHWPF.DAL
         private static Context _context = SingletonContext.GetInstance();
 
         public static Prontuario BuscarPorMatriculaP(string matricula) =>
-            _context.Prontuarios.FirstOrDefault(x => x.Funcionario.Matricula == matricula);
+            _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Matricula == matricula);
 
         public static bool Cadastrar(Prontuario prontuario)
         {

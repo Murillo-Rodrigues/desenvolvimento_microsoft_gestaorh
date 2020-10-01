@@ -29,27 +29,27 @@ namespace GestaoRHWPF.Views.Cadastrar
 
         }
 
-        //private void cboFuncionarios_DropDownClosed(object sender, System.EventArgs e)
-        //{
-        //    int id = (int)cboFuncionarios.SelectedValue;
+        private void cboFuncionarios_DropDownClosed(object sender, System.EventArgs e)
+        {
+            int id = (int)cboFuncionarios.SelectedValue;
 
-        //    Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
+            Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
 
-        //    txtNomeFuncionario.Text = funcionario.Nome;
+            txtNomeFuncionario.Text = funcionario.Nome;
 
-        //}
+        }
 
-        //private void cboCaixas_DropDownClosed(object sender, System.EventArgs e)
-        //{
-        //    int id = (int)cboCaixas.SelectedValue;
-        //    Caixa caixa = CaixaDAO.BuscarPorId(id);
+        private void cboCaixas_DropDownClosed(object sender, System.EventArgs e)
+        {
+            int id = (int)cboCaixas.SelectedValue;
+            Caixa caixa = CaixaDAO.BuscarPorId(id);
 
-        //    txtCorredor_Estante_Altura.Text = $"C - [{caixa.PosicaoCorredor}]   |   E - [{caixa.PosicaoEstante}]   |   A - [{caixa.PosicaoAltura}]";
-        //}
+            txtCorredor_Estante_Altura.Text = $"C - [{caixa.PosicaoCorredor}]   |   E - [{caixa.PosicaoEstante}]   |   A - [{caixa.PosicaoAltura}]";
+        }
 
         private void btnCadastrarProntuario_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text) && !string.IsNullOrWhiteSpace(cboCaixas.Text))
+            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text) || !string.IsNullOrWhiteSpace(cboCaixas.Text))
             {
                 int id = (int)cboFuncionarios.SelectedValue;
                 Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
