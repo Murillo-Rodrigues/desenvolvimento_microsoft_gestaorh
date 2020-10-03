@@ -29,16 +29,10 @@ namespace GestaoRHWPF.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Custodia")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NumeroCaixa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoAltura")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoCorredor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoEstante")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

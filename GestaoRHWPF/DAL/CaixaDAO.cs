@@ -8,23 +8,26 @@ namespace GestaoRHWPF.DAL
     {
         private static Context _context = SingletonContext.GetInstance();
 
+        /**
+         * Buscas no banco para validar um cadastro de uma caixa
+         */
         public static Caixa BuscarPorNumeroCaixa(string numeroCaixa) =>
             _context.Caixas.FirstOrDefault(x => x.NumeroCaixa == numeroCaixa);
+
+        public static Caixa BuscarPorCustodia(string custodia) =>
+            _context.Caixas.FirstOrDefault(x => x.Custodia == custodia);
+
+        /**
+         */
         public static Caixa BuscarPorId(int id) =>
-            _context.Caixas.FirstOrDefault(x => x.Id == id);
+            _context.Caixas.Find(id);
         public static Prontuario BuscarPorIdCaixaNoProntuario(int id) =>
            _context.Prontuarios.FirstOrDefault(x => x.Caixa.Id == id);
 
-        public static bool Cadastrar(Caixa caixa)
+        public static void Cadastrar(Caixa caixa)
         {
-            if (BuscarPorNumeroCaixa(caixa.NumeroCaixa) == null)
-            {
-                _context.Caixas.Add(caixa);
-                _context.SaveChanges();
-
-                return true;
-            }
-            return false;
+            _context.Caixas.Add(caixa);
+            _context.SaveChanges();
         }
 
         public static bool Remover(Caixa caixa)

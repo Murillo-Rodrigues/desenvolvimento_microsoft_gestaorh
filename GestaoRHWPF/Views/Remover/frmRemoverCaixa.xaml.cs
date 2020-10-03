@@ -26,9 +26,7 @@ namespace GestaoRHWPF.Views.Remover
                 {
                     txtId.Text = caixa.Id.ToString();
                     txtNumeroCaixa.Text = caixa.NumeroCaixa.ToString();
-                    txtPosicaoCorredor.Text = caixa.PosicaoCorredor.ToString();
-                    txtPosicaoEstante.Text = caixa.PosicaoEstante.ToString();
-                    txtPosicaoAltura.Text = caixa.PosicaoAltura.ToString();
+                    txtCustodia.Text = caixa.Custodia.ToString();
                     txtCriadoEm.Text = caixa.CriadoEm.ToString();
                     btnRemoverCaixa.IsEnabled = true;
 
@@ -74,9 +72,7 @@ namespace GestaoRHWPF.Views.Remover
         {
             txtId.Clear();
             txtNumeroCaixa.Clear();
-            txtPosicaoCorredor.Clear();
-            txtPosicaoEstante.Clear();
-            txtPosicaoAltura.Clear();
+            txtCustodia.Clear();
             txtCriadoEm.Clear();
             txtNumeroCaixa.Focus();
         }

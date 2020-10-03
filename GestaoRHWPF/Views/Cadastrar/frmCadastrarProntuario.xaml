@@ -22,7 +22,7 @@
         <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="74,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
         <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="421,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
         <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="44,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
-        <TextBox x:Name="txtCorredor_Estante_Altura" HorizontalAlignment="Left" Margin="398,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="15" FontWeight="Medium" Background="White"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="398,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="15" FontWeight="Medium" Background="White"/>
 
     </Grid>
 </Window>

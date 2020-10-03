@@ -8,6 +8,12 @@
         Title="Busca de Prontuários" Height="408" Width="808" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Label Content="Prontuários Cadastrados: " HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Medium"/>
-        <DataGrid x:Name="dtaProntuarios" Margin="10,49,10,21" FontSize="18" FontWeight="Medium"/>
+        <DataGrid x:Name="dtaProntuarios" AutoGenerateColumns="False" Margin="10,49,10,21" FontSize="18" FontWeight="Medium">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matrícula Funcionário" Width="2*" Binding="{Binding Matricula}"/>
+                <DataGridTextColumn Header="Custodia" Width="2*" Binding="{Binding Custodia}"/>
+                <DataGridTextColumn Header="Criado Em" Width="2*" Binding="{Binding CriadoEm}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

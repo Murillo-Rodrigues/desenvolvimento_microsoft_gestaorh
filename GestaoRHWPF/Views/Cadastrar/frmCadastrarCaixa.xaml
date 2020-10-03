@@ -10,15 +10,11 @@
         <Label Content="Cadastrar Caixa" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Medium"/>
         <Label Content="Id:" HorizontalAlignment="Left" Margin="35,71,0,0" VerticalAlignment="Top"/>
         <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="35,102,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posição do Corredor:" HorizontalAlignment="Left" Margin="35,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posição da Estante:" HorizontalAlignment="Left" Margin="35,164,0,0" VerticalAlignment="Top"/>
-        <Label Content="Altura da Estante:" HorizontalAlignment="Left" Margin="35,194,0,0" VerticalAlignment="Top"/>
+        <Label Content="Posição da Custódia:" HorizontalAlignment="Left" Margin="35,133,0,0" VerticalAlignment="Top"/>
         <Label Content="Criado Em:" HorizontalAlignment="Left" Margin="35,226,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="165,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
         <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="165,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="0" MaxLength="9"/>
-        <TextBox x:Name="txtPosicaoCorredor" HorizontalAlignment="Left" Margin="165,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="1" MaxLength="1" />
-        <TextBox x:Name="txtPosicaoEstante" HorizontalAlignment="Left" Margin="165,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="3" MaxLength="1"/>
-        <TextBox x:Name="txtPosicaoAltura" HorizontalAlignment="Left" Margin="165,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="4" MaxLength="1"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="165,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="1" MaxLength="3" />
         <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="165,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
         <Label Content="(9 dígitos)" HorizontalAlignment="Left" Margin="406,102,0,0" VerticalAlignment="Top"/>
         <Label Content="(A-Z)" HorizontalAlignment="Left" Margin="406,133,0,0" VerticalAlignment="Top"/>

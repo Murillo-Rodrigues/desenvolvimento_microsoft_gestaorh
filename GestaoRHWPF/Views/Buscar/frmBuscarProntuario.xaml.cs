@@ -1,4 +1,5 @@
 ﻿using GestaoRHWPF.DAL;
+using GestaoRHWPF.Models;
 using System.Windows;
 
 namespace GestaoRHWPF.Views.Buscar
@@ -16,7 +17,14 @@ namespace GestaoRHWPF.Views.Buscar
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dtaProntuarios.ItemsSource = ProntuarioDAO.Listar();
-            dtaProntuarios.DisplayMemberPath = "Id";
+            Prontuario prontuario = new Prontuario();
+
+            dynamic item = new
+            {
+                Matricula = prontuario.Funcionario.Matricula,
+                Custodia = prontuario.Caixa.Custodia,
+                CriadoEm = prontuario.CriadoEm
+            };
         }
     }
 }

@@ -11,20 +11,15 @@
         <Label Content="Por favor, insira o número da caixa" HorizontalAlignment="Left" Margin="170,49,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" Height="33" Width="262"/>
         <Label Content="Id:" HorizontalAlignment="Left" Margin="40,88,0,0" VerticalAlignment="Top"/>
         <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="40,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posição do Corredor:" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posição da Estante:" HorizontalAlignment="Left" Margin="40,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="Altura da Estante:" HorizontalAlignment="Left" Margin="40,211,0,0" VerticalAlignment="Top"/>
+        <Label Content="Posição da Custódia:" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top"/>
+
         <Label Content="Criado Em:" HorizontalAlignment="Left" Margin="40,243,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="170,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
         <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="170,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="0" MaxLength="9"/>
-        <TextBox x:Name="txtPosicaoCorredor" HorizontalAlignment="Left" Margin="170,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="1" MaxLength="1" IsEnabled="False"/>
-        <TextBox x:Name="txtPosicaoEstante" HorizontalAlignment="Left" Margin="170,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="3" MaxLength="1" IsEnabled="False"/>
-        <TextBox x:Name="txtPosicaoAltura" HorizontalAlignment="Left" Margin="170,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="4" MaxLength="1" IsEnabled="False"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="170,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="1" MaxLength="1" IsEnabled="False"/>
+
         <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="170,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
         <Label Content="(9 dígitos)" HorizontalAlignment="Left" Margin="410,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="(A-Z)" HorizontalAlignment="Left" Margin="410,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="(1-10)" HorizontalAlignment="Left" Margin="410,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="(1-4)" HorizontalAlignment="Left" Margin="410,212,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnBuscarCaixa" Content="Buscar" HorizontalAlignment="Left" Margin="136,300,0,0" VerticalAlignment="Top" Height="52" Width="120" TabIndex="5" Click="btnBuscarCaixa_Click"/>
         <Button x:Name="btnRemoverCaixa" Content="Remover" HorizontalAlignment="Left" Margin="294,300,0,0" VerticalAlignment="Top" Height="52" Width="120" TabIndex="6" IsEnabled="False" Click="btnRemoverCaixa_Click"/>
 

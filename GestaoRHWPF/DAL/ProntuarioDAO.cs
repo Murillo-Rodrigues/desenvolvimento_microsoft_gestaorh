@@ -11,19 +11,19 @@ namespace GestaoRHWPF.DAL
 
         public static Prontuario BuscarPorMatriculaP(string matricula) =>
             _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Matricula == matricula);
-        public static Prontuario BuscarPorIdP(int id) =>
-           _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Id == id);
+
+        public static Prontuario BuscarPorIdFuncionarioP(int id) =>
+            _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Id == id);
+
+        public static Prontuario BuscarPorIdCaixaP(int id) =>
+           _context.Prontuarios.FirstOrDefault(x => x.Caixa.Id == id);
 
 
-        public static bool Cadastrar(Prontuario prontuario)
+        public static void Cadastrar(Prontuario prontuario)
         {
-            if (BuscarPorMatriculaP(prontuario.Funcionario.Matricula) == null)
-            {
-                _context.Prontuarios.Add(prontuario);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
+            _context.Prontuarios.Add(prontuario);
+            _context.SaveChanges();
+
         }
 
         public static void Remover(Prontuario prontuario)

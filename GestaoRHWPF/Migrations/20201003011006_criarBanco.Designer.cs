@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestaoRHWPF.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201001225114_criarBanco")]
+    [Migration("20201003011006_criarBanco")]
     partial class criarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,16 +31,10 @@ namespace GestaoRHWPF.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Custodia")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NumeroCaixa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoAltura")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoCorredor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoEstante")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

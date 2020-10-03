@@ -15,9 +15,7 @@ namespace GestaoRHWPF.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CriadoEm = table.Column<DateTime>(nullable: false),
                     NumeroCaixa = table.Column<string>(nullable: true),
-                    PosicaoCorredor = table.Column<string>(nullable: true),
-                    PosicaoEstante = table.Column<string>(nullable: true),
-                    PosicaoAltura = table.Column<string>(nullable: true)
+                    Custodia = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

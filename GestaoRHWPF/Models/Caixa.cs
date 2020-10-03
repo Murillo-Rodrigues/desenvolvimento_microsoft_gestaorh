@@ -7,9 +7,7 @@ namespace GestaoRHWPF.Models
     {
 
         public string NumeroCaixa { get; set; }
-        public string PosicaoCorredor { get; set; }
-        public string PosicaoEstante { get; set; }
-        public string PosicaoAltura { get; set; }
+        public string Custodia { get; set; }
 
     }
 }

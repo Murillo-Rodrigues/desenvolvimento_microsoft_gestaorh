@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="GestaoRH WPF" Height="510" Width="876" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Window.Background>
-        <ImageBrush ImageSource="/Views/2.jpg" Stretch="Fill"/>
+        <ImageBrush ImageSource="/Images/2.jpg" Stretch="Fill"/>
     </Window.Background>
     <Grid>
         <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="20" Width="876">

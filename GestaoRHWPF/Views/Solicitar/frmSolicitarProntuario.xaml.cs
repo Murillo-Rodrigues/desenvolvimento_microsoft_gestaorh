@@ -11,7 +11,6 @@ namespace GestaoRHWPF.Views.Solicitar
     public partial class frmSolicitarProntuario : Window
     {
         private Solicitacao solicitacao = new Solicitacao();
-        private Prontuario prontuario = new Prontuario();
         private List<dynamic> itens = new List<dynamic>();
         public frmSolicitarProntuario()
         {
@@ -27,9 +26,9 @@ namespace GestaoRHWPF.Views.Solicitar
             cboFuncionarios.DisplayMemberPath = "Matricula";
             cboFuncionarios.SelectedValuePath = "Id";
 
-            cboCaixa.ItemsSource = CaixaDAO.Listar();
-            cboCaixa.DisplayMemberPath = "NumeroCaixa";
-            cboCaixa.SelectedValuePath = "Id";
+            //cboCaixa.ItemsSource = CaixaDAO.Listar();
+            //cboCaixa.DisplayMemberPath = "NumeroCaixa";
+            //cboCaixa.SelectedValuePath = "Id";
         }
 
         private void btnSolicitarProntuario_Click(object sender, RoutedEventArgs e)
@@ -38,10 +37,10 @@ namespace GestaoRHWPF.Views.Solicitar
             {
 
                 int id = (int)cboFuncionarios.SelectedValue;
-                prontuario.Funcionario = FuncionarioDAO.BuscarPorId(id);
+                Prontuario prontuario = ProntuarioDAO.BuscarPorIdFuncionarioP(id);
 
-                int idC = (int)cboCaixa.SelectedValue;
-                prontuario.Caixa = CaixaDAO.BuscarPorId(idC);
+                //int idC = (int)cboCaixa.SelectedValue;
+                //prontuario.Caixa = CaixaDAO.BuscarPorId(idC);
 
                 PopularItensSolicitacao(prontuario);
                 PopularDataGrid(prontuario);
@@ -52,7 +51,7 @@ namespace GestaoRHWPF.Views.Solicitar
 
                 MessageBox.Show("Solicitação realizada com sucesso!", "Solicitação de Prontuários",
                     MessageBoxButton.OK, MessageBoxImage.Information);
-
+                btnCadastrarSolicitacao.IsEnabled = true;
             }
             else
             {
@@ -69,7 +68,7 @@ namespace GestaoRHWPF.Views.Solicitar
                 {
                     Prontuario = prontuario
                 }
-             );
+             ); ;
         }
         private void PopularDataGrid(Prontuario prontuario)
         {
@@ -78,9 +77,7 @@ namespace GestaoRHWPF.Views.Solicitar
                 Matricula = prontuario.Funcionario.Matricula,
                 Nome = prontuario.Funcionario.Nome,
                 NumeroCaixa = prontuario.Caixa.NumeroCaixa,
-                PosicaoCorredor = prontuario.Caixa.PosicaoCorredor,
-                PosicaoEstante = prontuario.Caixa.PosicaoEstante,
-                PosicaoAltura = prontuario.Caixa.PosicaoAltura,
+                Custodia = prontuario.Caixa.Custodia,
                 CriadoEm = solicitacao.CriadoEm,
             });
         }
@@ -90,18 +87,24 @@ namespace GestaoRHWPF.Views.Solicitar
             int id = (int)cboFuncionarios.SelectedValue;
             solicitacao.Funcionario = FuncionarioDAO.BuscarPorId(id);
 
-            int idC = (int)cboCaixa.SelectedValue;
-            solicitacao.Caixa = CaixaDAO.BuscarPorId(idC);
+            //int idC = (int)cboCaixa.SelectedValue;
+            //solicitacao.Caixa = CaixaDAO.BuscarPorId(idC);
 
-            if (SolicitacaoDAO.Cadastrar(solicitacao))
+            SolicitacaoDAO.Cadastrar(solicitacao);
+
+            MessageBox.Show("Solicitação cadastrada com sucesso!", "Solicitação de Prontuários",
+               MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void cboFuncionarios_DropDownClosed(object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text))
             {
-                MessageBox.Show("Solicitação cadastrada com sucesso!", "Solicitação de Prontuários",
-                   MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("Não é possível cadastrar a mesma solitação", "Solicitação de Prontuários",
-            MessageBoxButton.OK, MessageBoxImage.Error);
+                int id = (int)cboFuncionarios.SelectedValue;
+
+                Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
+
+                txtNomeFuncionario.Text = funcionario.Nome;
             }
         }
     }

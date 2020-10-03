@@ -11,19 +11,14 @@ namespace GestaoRHWPF.DAL
 
         public static Prontuario BuscarPorIdS(int id) =>
             _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Id == id);
-        public static Prontuario BuscarPorIdSolicitacao(int id) =>
-            _context.Prontuarios.FirstOrDefault(x => x.Id == id);
+        public static Solicitacao BuscarPorIdSolicitacao(int id) =>
+            _context.Solicitacoes.FirstOrDefault(x => x.Id == id);
 
 
-        public static bool Cadastrar(Solicitacao solicitacao)
+        public static void Cadastrar(Solicitacao solicitacao)
         {
-            if (BuscarPorIdSolicitacao(solicitacao.Id) == null)
-            {
-                _context.Solicitacoes.Add(solicitacao);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
+            _context.Solicitacoes.Add(solicitacao);
+            _context.SaveChanges();
         }
 
         public static List<Solicitacao> Listar() => _context.Solicitacoes.ToList();

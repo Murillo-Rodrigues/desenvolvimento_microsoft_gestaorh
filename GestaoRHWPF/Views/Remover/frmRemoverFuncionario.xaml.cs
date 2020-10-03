@@ -52,11 +52,18 @@ namespace GestaoRHWPF.Views.Remover
 
                 if (funcionario != null)
                 {
-                    FuncionarioDAO.Remover(funcionario);
-                    MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Funcionários",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
-                    LimparFormulario();
-                    btnRemover.IsEnabled = false;
+                    if (FuncionarioDAO.Remover(funcionario))
+                    {
+                        MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Funcionários",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        LimparFormulario();
+                        btnRemover.IsEnabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é possivel remover um funcionário com prontuários vinculados   !", "Remoção de Funcionários",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {

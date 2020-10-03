@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Views\2.jpg" />
+    <Resource Include="Images\2.jpg" />
   </ItemGroup>
 
 </Project>

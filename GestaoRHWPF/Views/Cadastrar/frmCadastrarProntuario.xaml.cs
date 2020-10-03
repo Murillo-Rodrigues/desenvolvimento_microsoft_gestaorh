@@ -31,20 +31,25 @@ namespace GestaoRHWPF.Views.Cadastrar
 
         private void cboFuncionarios_DropDownClosed(object sender, System.EventArgs e)
         {
-            int id = (int)cboFuncionarios.SelectedValue;
+            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text))
+            {
+                int id = (int)cboFuncionarios.SelectedValue;
 
-            Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
+                Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
 
-            txtNomeFuncionario.Text = funcionario.Nome;
-
+                txtNomeFuncionario.Text = funcionario.Nome;
+            }
         }
 
         private void cboCaixas_DropDownClosed(object sender, System.EventArgs e)
         {
-            int id = (int)cboCaixas.SelectedValue;
-            Caixa caixa = CaixaDAO.BuscarPorId(id);
+            if (!string.IsNullOrWhiteSpace(cboCaixas.Text))
+            {
+                int id = (int)cboCaixas.SelectedValue;
+                Caixa caixa = CaixaDAO.BuscarPorId(id);
 
-            txtCorredor_Estante_Altura.Text = $"C - [{caixa.PosicaoCorredor}]   |   E - [{caixa.PosicaoEstante}]   |   A - [{caixa.PosicaoAltura}]";
+                txtCustodia.Text = caixa.Custodia;
+            }
         }
 
         private void btnCadastrarProntuario_Click(object sender, RoutedEventArgs e)
@@ -64,35 +69,41 @@ namespace GestaoRHWPF.Views.Cadastrar
                         Funcionario = funcionario,
                         Caixa = caixa
                     };
-                    if (ProntuarioDAO.Cadastrar(prontuario))
+
+                    if (ProntuarioDAO.BuscarPorMatriculaP(prontuario.Funcionario.Matricula) != null)
                     {
-                        MessageBox.Show("Prontuário cadastrado com sucesso!", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Esta matrícula já está vinculada a um Prontuário existente", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Error);
+                        LimparFormulario();
+                    }
+                    else if (ProntuarioDAO.BuscarPorIdCaixaP(prontuario.Caixa.Id) != null)
+                    {
+                        MessageBox.Show("Esta caixa já se encontra ocupada", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Error);
                         LimparFormulario();
                     }
                     else
                     {
-                        MessageBox.Show("Este prontuário não pode ser cadastrado novamente!", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Error);
+                        ProntuarioDAO.Cadastrar(prontuario);
+                        MessageBox.Show("Prontuário cadastrado com sucesso!", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Information);
                         LimparFormulario();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Dados não encontrados!", "Cadastro de Prontuários",
-                           MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Dados não encontrados!", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
             }
             else
             {
-                MessageBox.Show("É necessário selecionar os dados primeiro!", "Cadastro de Prontuários",
-                           MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("É necessário selecionar os dados primeiro!", "Cadastro de Prontuários", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }
         private void LimparFormulario()
         {
             txtNomeFuncionario.Clear();
-            txtCorredor_Estante_Altura.Clear();
+            txtCustodia.Clear();
+            cboFuncionarios.Text = "";
+            cboCaixas.Text = "";
             cboFuncionarios.Focus();
         }
     }

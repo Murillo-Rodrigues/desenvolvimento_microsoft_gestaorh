@@ -8,7 +8,7 @@ namespace GestaoRHWPF.Models
     {
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
-
+        public DbSet<ItemSolicitacao> ItensSolicitacao { get; set; }
         public DbSet<Prontuario> Prontuarios { get; set; }
         public DbSet<Solicitacao> Solicitacoes { get; set; }
 

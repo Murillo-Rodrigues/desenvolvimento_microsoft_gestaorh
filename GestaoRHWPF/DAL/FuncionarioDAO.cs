@@ -14,6 +14,9 @@ namespace GestaoRHWPF.DAL
         public static Funcionario BuscarPorId(int id) =>
             _context.Funcionarios.FirstOrDefault(x => x.Id == id);
 
+        public static Prontuario BuscarPorIdFuncionarioNoProntuario(int id) =>
+             _context.Prontuarios.FirstOrDefault(x => x.Funcionario.Id == id);
+
         public static bool Cadastrar(Funcionario funcionario)
         {
             if (BuscarPorMatricula(funcionario.Matricula) == null)
@@ -25,10 +28,15 @@ namespace GestaoRHWPF.DAL
             return false;
         }
 
-        public static void Remover(Funcionario funcionario)
+        public static bool Remover(Funcionario funcionario)
         {
-            _context.Funcionarios.Remove(funcionario);
-            _context.SaveChanges();
+            if (BuscarPorIdFuncionarioNoProntuario(funcionario.Id) == null)
+            {
+                _context.Funcionarios.Remove(funcionario);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public static List<Funcionario> Listar() => _context.Funcionarios.ToList();

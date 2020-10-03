@@ -22,21 +22,31 @@ namespace GestaoRHWPF.Views.Cadastrar
                 Caixa caixa = new Caixa
                 {
                     NumeroCaixa = txtNumeroCaixa.Text,
-                    PosicaoCorredor = txtPosicaoCorredor.Text,
-                    PosicaoEstante = txtPosicaoEstante.Text,
-                    PosicaoAltura = txtPosicaoAltura.Text
+                    Custodia = txtCustodia.Text,
                 };
 
-                if (CaixaDAO.Cadastrar(caixa))
+                if (CaixaDAO.BuscarPorNumeroCaixa(caixa.NumeroCaixa) != null)
                 {
-                    MessageBox.Show("Cadastro de Caixa realizado com sucesso!", "Cadastro de Caixas",
-                                    MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MessageBox.Show("Caixa com número já existe", "Cadastro de Caixas", MessageBoxButton.OK, MessageBoxImage.Error);
                     LimparFormulario();
+
                 }
                 else
                 {
-                    MessageBox.Show("Esta caixa já existe!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (CaixaDAO.BuscarPorCustodia(caixa.Custodia) != null)
+                    {
+                        MessageBox.Show("Caixa no setor, posição, altura, já existe", "Cadastro de Caixas", MessageBoxButton.OK, MessageBoxImage.Error);
+                        LimparFormulario();
+                    }
+                    else
+                    {
+                        CaixaDAO.Cadastrar(caixa);
+                        MessageBox.Show("Caixa cadastrada com sucesso!", "Cadastro de Caixas", MessageBoxButton.OK, MessageBoxImage.Information);
+                        LimparFormulario();
+                    }
                 }
+
 
             }
             else
@@ -50,9 +60,7 @@ namespace GestaoRHWPF.Views.Cadastrar
         {
             txtId.Clear();
             txtNumeroCaixa.Clear();
-            txtPosicaoCorredor.Clear();
-            txtPosicaoEstante.Clear();
-            txtPosicaoAltura.Clear();
+            txtCustodia.Clear();
             txtCriadoEm.Clear();
             txtNumeroCaixa.Focus();
         }
