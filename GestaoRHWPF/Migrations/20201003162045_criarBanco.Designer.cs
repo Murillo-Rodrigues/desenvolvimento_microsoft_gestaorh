@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestaoRHWPF.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201003011006_criarBanco")]
+    [Migration("20201003162045_criarBanco")]
     partial class criarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

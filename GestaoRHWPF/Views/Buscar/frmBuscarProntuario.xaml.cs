@@ -9,6 +9,7 @@ namespace GestaoRHWPF.Views.Buscar
     /// </summary>
     public partial class frmBuscarProntuario : Window
     {
+
         public frmBuscarProntuario()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace GestaoRHWPF.Views.Buscar
                 Custodia = prontuario.Caixa.Custodia,
                 CriadoEm = prontuario.CriadoEm
             };
+
         }
     }
 }
