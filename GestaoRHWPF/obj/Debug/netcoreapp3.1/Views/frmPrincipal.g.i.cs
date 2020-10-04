@@ -141,7 +141,7 @@ namespace GestaoRHWPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestaoRHWPF;component/views/frmprincipal.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestaoRHWPF;V1.0.0.0;component/views/frmprincipal.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\frmPrincipal.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

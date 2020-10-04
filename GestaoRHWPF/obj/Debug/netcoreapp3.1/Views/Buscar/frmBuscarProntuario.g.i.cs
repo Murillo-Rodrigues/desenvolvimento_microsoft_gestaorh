@@ -61,7 +61,7 @@ namespace GestaoRHWPF.Views.Buscar {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestaoRHWPF;component/views/buscar/frmbuscarprontuario.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestaoRHWPF;V1.0.0.0;component/views/buscar/frmbuscarprontuario.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Buscar\frmBuscarProntuario.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
