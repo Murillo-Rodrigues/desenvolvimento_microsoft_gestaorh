@@ -9,8 +9,6 @@ namespace GestaoRHWPF.Models
     {
         public Solicitacao()
         {
-            Funcionario = new Funcionario();
-            Caixa = new Caixa();
             Itens = new List<ItemSolicitacao>();
         }
 

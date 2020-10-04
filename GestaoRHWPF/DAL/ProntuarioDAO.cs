@@ -13,7 +13,7 @@ namespace GestaoRHWPF.DAL
             _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Matricula == matricula);
 
         public static Prontuario BuscarPorIdFuncionarioP(int id) =>
-            _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).FirstOrDefault(x => x.Funcionario.Id == id);
+            _context.Prontuarios.Include(x => x.Caixa).Include(x => x.Funcionario).FirstOrDefault(x => x.Funcionario.Id == id);
 
         public static Prontuario BuscarPorIdCaixaP(int id) =>
            _context.Prontuarios.FirstOrDefault(x => x.Caixa.Id == id);
@@ -32,6 +32,8 @@ namespace GestaoRHWPF.DAL
             _context.SaveChanges();
         }
 
-        public static List<Prontuario> Listar() => _context.Prontuarios.ToList();
+        public static List<Prontuario> Listar() => _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).ToList();
+
+
     }
 }

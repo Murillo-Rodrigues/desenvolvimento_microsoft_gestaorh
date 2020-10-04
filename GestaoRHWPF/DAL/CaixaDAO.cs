@@ -19,6 +19,7 @@ namespace GestaoRHWPF.DAL
 
         /**
          */
+
         public static Caixa BuscarPorId(int id) =>
             _context.Caixas.Find(id);
         public static Prontuario BuscarPorIdCaixaNoProntuario(int id) =>

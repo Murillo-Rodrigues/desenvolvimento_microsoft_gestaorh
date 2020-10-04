@@ -16,12 +16,12 @@
         <ComboBox x:Name="cboCaixa" HorizontalAlignment="Left" Margin="27,253,0,0" VerticalAlignment="Top" Width="195" Height="27" FontSize="16"/>
         <TextBox x:Name="txtCorredor_Estante_Altura" HorizontalAlignment="Left" Margin="27,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
         <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="48,332,0,0" VerticalAlignment="Top" IsEnabled="False"/>-->
-        <Button x:Name="btnSolicitarProntuario" Content="Buscar Prontuário" HorizontalAlignment="Left" Margin="57,284,0,0" VerticalAlignment="Top" Height="51" Width="144" Click="btnSolicitarProntuario_Click"/>
-        <Button x:Name="btnCadastrarSolicitacao" Content="Cadastrar Solicitação" HorizontalAlignment="Left" Margin="57,360,0,0" VerticalAlignment="Top" Height="51" Width="144" Click="btnCadastrarSolicitacao_Click" IsEnabled="False"/>
+        <Button x:Name="btnSolicitarProntuario" Content="Buscar Prontuário" HorizontalAlignment="Left" Margin="52,268,0,0" VerticalAlignment="Top" Height="51" Width="144" Click="btnSolicitarProntuario_Click"/>
+        <Button x:Name="btnCadastrarSolicitacao" Content="Cadastrar Solicitação" HorizontalAlignment="Left" Margin="52,344,0,0" VerticalAlignment="Top" Height="51" Width="144" Click="btnCadastrarSolicitacao_Click" IsEnabled="False"/>
         <DataGrid x:Name="dtaSolicitacoes" AutoGenerateColumns="False" FontSize="13" FontWeight="Medium" Margin="270,49,10,125">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Matrícula Vinculada" Width="2*" Binding="{Binding Matricula}"/>
-                <DataGridTextColumn Header="Nome do Funcionário" Width="2*" Binding="{Binding Nome}"/>
+                <!--<DataGridTextColumn Header="Matrícula Vinculada" Width="2*" Binding="{Binding Matricula}"/>
+                <DataGridTextColumn Header="Nome do Funcionário" Width="2*" Binding="{Binding Nome}"/>-->
                 <DataGridTextColumn Header="Número da Caixa" Width="2*" Binding="{Binding NumeroCaixa}"/>
                 <DataGridTextColumn Header="Custodia" Width="1*" Binding="{Binding Custodia}"/>
                 <DataGridTextColumn Header="Criado Em" Width="2*" Binding="{Binding CriadoEm}"/>

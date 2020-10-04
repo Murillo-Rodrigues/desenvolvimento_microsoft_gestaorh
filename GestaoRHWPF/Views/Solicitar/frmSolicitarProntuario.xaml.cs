@@ -30,6 +30,17 @@ namespace GestaoRHWPF.Views.Solicitar
             //cboCaixa.DisplayMemberPath = "NumeroCaixa";
             //cboCaixa.SelectedValuePath = "Id";
         }
+        private void cboFuncionarios_DropDownClosed(object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text))
+            {
+                int id = (int)cboFuncionarios.SelectedValue;
+
+                Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
+
+                txtNomeFuncionario.Text = funcionario.Nome;
+            }
+        }
 
         private void btnSolicitarProntuario_Click(object sender, RoutedEventArgs e)
         {
@@ -49,8 +60,8 @@ namespace GestaoRHWPF.Views.Solicitar
 
 
 
-                MessageBox.Show("Solicitação realizada com sucesso!", "Solicitação de Prontuários",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show("Solicitação realizada com sucesso!", "Solicitação de Prontuários",
+                //    MessageBoxButton.OK, MessageBoxImage.Information);
                 btnCadastrarSolicitacao.IsEnabled = true;
             }
             else
@@ -74,38 +85,45 @@ namespace GestaoRHWPF.Views.Solicitar
         {
             itens.Add(new
             {
-                Matricula = prontuario.Funcionario.Matricula,
-                Nome = prontuario.Funcionario.Nome,
+                //Matricula = prontuario.Funcionario.Matricula,
+                //Nome = prontuario.Funcionario.Nome,
                 NumeroCaixa = prontuario.Caixa.NumeroCaixa,
                 Custodia = prontuario.Caixa.Custodia,
-                CriadoEm = solicitacao.CriadoEm,
+                CriadoEm = prontuario.CriadoEm,
             });
         }
 
         private void btnCadastrarSolicitacao_Click(object sender, RoutedEventArgs e)
         {
             int id = (int)cboFuncionarios.SelectedValue;
+            Prontuario prontuario = ProntuarioDAO.BuscarPorIdFuncionarioP(id);
             solicitacao.Funcionario = FuncionarioDAO.BuscarPorId(id);
+            solicitacao.Caixa = prontuario.Caixa;
 
-            //int idC = (int)cboCaixa.SelectedValue;
-            //solicitacao.Caixa = CaixaDAO.BuscarPorId(idC);
-
-            SolicitacaoDAO.Cadastrar(solicitacao);
-
-            MessageBox.Show("Solicitação cadastrada com sucesso!", "Solicitação de Prontuários",
-               MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void cboFuncionarios_DropDownClosed(object sender, System.EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text))
+            if (SolicitacaoDAO.Cadastrar(solicitacao))
             {
-                int id = (int)cboFuncionarios.SelectedValue;
-
-                Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);
-
-                txtNomeFuncionario.Text = funcionario.Nome;
+                MessageBox.Show("Solicitação cadastrada com sucesso!", "Solicitação de Prontuários",
+               MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            else
+            {
+                MessageBox.Show("Erro! Algum prontuário já possui uma solicitação em aberto", "Solicitação de Prontuários",
+               MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            LimparFormulario();
         }
+
+        private void LimparFormulario()
+        {
+            txtNomeFuncionario.Clear();
+            cboFuncionarios.Text = "";
+            itens.Clear();
+            dtaSolicitacoes.Items.Refresh();
+            solicitacao.Itens.Clear();
+            btnCadastrarSolicitacao.IsEnabled = false;
+            txtNomeFuncionario.Focus();
+        }
+
     }
 }

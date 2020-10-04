@@ -17,7 +17,7 @@ namespace GestaoRHWPF.Views.Cadastrar
 
         private void btnCadastrarCaixa_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text))
+            if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text) || !string.IsNullOrWhiteSpace(txtCustodia.Text))
             {
                 Caixa caixa = new Caixa
                 {
