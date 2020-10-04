@@ -88,5 +88,20 @@ namespace GestaoRHWPF.Views
             frmSolicitarProntuario frmsolicitarprontuario = new frmSolicitarProntuario();
             frmsolicitarprontuario.Show();
         }
+
+        private void btnCadastrarFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            menuCadastrarFuncionario_Click(sender, e);
+        }
+
+        private void btnListarFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            menuBuscarFuncionario_Click(sender, e);
+        }
+
+        private void btnRemoverFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            menuRemoverFuncionario_Click(sender, e);
+        }
     }
 }

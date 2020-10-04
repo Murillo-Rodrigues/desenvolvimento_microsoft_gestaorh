@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <None Remove="Views\2.jpg" />
+    <None Remove="Views\3 - Redimensionado 1500x980    2.jpg" />
+    <None Remove="Views\3 - Redimensionado 1500x980.jpg" />
+    <None Remove="Views\3 - Redimensionado 1500x980______3_____.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,9 @@
 
   <ItemGroup>
     <Resource Include="Images\2.jpg" />
+    <Resource Include="Views\3 - Redimensionado 1500x980    2.jpg" />
+    <Resource Include="Views\3 - Redimensionado 1500x980.jpg" />
+    <Resource Include="Views\3 - Redimensionado 1500x980______3_____.jpg" />
   </ItemGroup>
 
 </Project>

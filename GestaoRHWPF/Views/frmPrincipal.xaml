@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views"
         mc:Ignorable="d"
-        Title="GestaoRH WPF" Height="510" Width="876" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="GestaoRH WPF" Height="980" Width="1500" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+
     <Window.Background>
-        <ImageBrush ImageSource="/Images/2.jpg" Stretch="Fill"/>
+        <ImageBrush ImageSource="/Views/3 - Redimensionado 1500x980______3_____.jpg"/>
     </Window.Background>
     <Grid>
-        <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="20" Width="876">
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="20" Width="1500" Foreground="White" FontSize="13" FontWeight="Normal" Background="#FF2F2F32" BorderThickness="1,1,1,1">
             <MenuItem Header="_Arquivo">
                 <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
             </MenuItem>
@@ -34,6 +35,86 @@
             </MenuItem>
             <MenuItem Header="S_obre"/>
         </Menu>
+        <Button x:Name="btnCadastrarFuncionario" Content="" HorizontalAlignment="Left" Margin="24,271,0,0" VerticalAlignment="Top" Height="60" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnCadastrarFuncionario_Click" >
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Opacity" Value="10"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnListarFuncionario" Content="" HorizontalAlignment="Left" Margin="24,340,0,0" VerticalAlignment="Top" Height="60" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnListarFuncionario_Click" >
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Opacity" Value="10"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnRemoverFuncionario" Content="" HorizontalAlignment="Left" Margin="24,407,0,0" VerticalAlignment="Top" Height="60" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnRemoverFuncionario_Click" >
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Opacity" Value="10"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
+
+
+
 
     </Grid>
 </Window>
