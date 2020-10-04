@@ -9,5 +9,10 @@ namespace GestaoRHWPF.Models
         public string NumeroCaixa { get; set; }
         public string Custodia { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Custodia}";
+        }
+
     }
 }

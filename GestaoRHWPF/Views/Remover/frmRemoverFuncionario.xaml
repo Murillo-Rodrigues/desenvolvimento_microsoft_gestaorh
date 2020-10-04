@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Remover"
         mc:Ignorable="d"
         Title="Remover Funcionário" Height="402" Width="445" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Margin="7,2,-7,-2">
         <Label Content="Remoção de Funcionário:" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" FontSize="18" FontStretch="Medium" FontWeight="Medium"/>
         <Label Content="Id:" HorizontalAlignment="Left" Margin="25,92,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
         <Label Content="Matrícula:" HorizontalAlignment="Left" Margin="25,128,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
@@ -19,8 +19,10 @@
         <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="125,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" IsEnabled="False"/>
         <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="125,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" IsEnabled="False"/>
         <Label Content="Por favor, insira a matrícula do funcionário:" HorizontalAlignment="Left" Margin="102,49,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Normal" FontStyle="Normal" FontWeight="Normal"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="94,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="1" Click="btnBuscar_Click"/>
-        <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="238,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="2" Click="btnRemover_Click" IsEnabled="False"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="6,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="1" Click="btnBuscar_Click"/>
+        <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="291,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="3" Click="btnRemover_Click" IsEnabled="False"/>
+        <Button x:Name="btnConcluir" Content="Concluir" HorizontalAlignment="Left" Margin="291,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="3" IsEnabled="False" Visibility="Hidden" Click="btnConcluir_Click" />
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="148,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="2" Click="btnAlterar_Click" IsEnabled="False" />
 
 
     </Grid>

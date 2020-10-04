@@ -102,7 +102,7 @@ namespace GestaoRHWPF.Views.Solicitar
 
             if (SolicitacaoDAO.Cadastrar(solicitacao))
             {
-                MessageBox.Show("Solicitação cadastrada com sucesso!", "Solicitação de Prontuários",
+                MessageBox.Show($"Solicitação realizada! O número de sua solicitação é: [{id}]", "Solicitação de Prontuários",
                MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
@@ -123,7 +123,7 @@ namespace GestaoRHWPF.Views.Solicitar
             solicitacao.Itens.Clear();
             btnCadastrarSolicitacao.IsEnabled = false;
             txtNomeFuncionario.Focus();
+            Close();
         }
-
     }
 }

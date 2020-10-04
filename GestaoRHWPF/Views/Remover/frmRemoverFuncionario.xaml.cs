@@ -28,6 +28,8 @@ namespace GestaoRHWPF.Views.Remover
                     txtCpf.Text = funcionario.Cpf;
                     txtCriadoEm.Text = funcionario.CriadoEm.ToString();
                     btnRemover.IsEnabled = true;
+                    btnAlterar.IsEnabled = true;
+                    
                 }
                 else
                 {
@@ -67,7 +69,7 @@ namespace GestaoRHWPF.Views.Remover
                 }
                 else
                 {
-                    MessageBox.Show("O funcionário não existe!", "Remoção de Funcionários",
+                    MessageBox.Show("O funcionário não existe na base!", "Remoção de Funcionários",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
@@ -79,7 +81,6 @@ namespace GestaoRHWPF.Views.Remover
             }
         }
 
-
         private void LimparFormulario()
         {
             txtId.Clear();
@@ -88,6 +89,63 @@ namespace GestaoRHWPF.Views.Remover
             txtCpf.Clear();
             txtCriadoEm.Clear();
             txtMatricula.Focus();
+        }
+
+        private void btnAlterar_Click(object sender, RoutedEventArgs e)
+        {
+            btnRemover.Visibility = Visibility.Hidden;
+            btnConcluir.Visibility = Visibility.Visible;
+            txtNome.IsEnabled = true;
+            txtCpf.IsEnabled = true;
+            btnConcluir.IsEnabled = true;
+
+        }
+
+        private void btnConcluir_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtMatricula.Text))
+            {
+                //funcionario = new Funcionario();
+
+                funcionario = FuncionarioDAO.BuscarPorMatricula(txtMatricula.Text);
+
+                if (funcionario != null)
+                {
+                    funcionario.Matricula = txtMatricula.Text;
+                    funcionario.Cpf = txtCpf.Text;
+                    funcionario.Nome = txtNome.Text;
+
+                    if (FuncionarioDAO.Alterar(funcionario))
+                    {
+                        MessageBox.Show("Alteração concluída com sucesso!", "Remoção de Funcionários",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        LimparFormulario();
+                        btnRemover.IsEnabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é possivel alterar um funcionário com prontuários vinculados!", "Remoção de Funcionários",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O funcionário não existe na base!", "Remoção de Funcionários",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Preencha o campo MATRÍCULA!", "Remoção de Funcionários",
+                       MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            btnRemover.Visibility = Visibility.Visible;
+            btnConcluir.Visibility = Visibility.Hidden;
+            txtNome.IsEnabled = false;
+            txtCpf.IsEnabled = false;
+            LimparFormulario();
         }
     }
 }

@@ -39,6 +39,17 @@ namespace GestaoRHWPF.DAL
             return false;
         }
 
+        public static bool Alterar(Funcionario funcionario)
+        {
+            if (BuscarPorIdFuncionarioNoProntuario(funcionario.Id) == null)
+            {
+                _context.Funcionarios.Update(funcionario);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public static List<Funcionario> Listar() => _context.Funcionarios.ToList();
     }
 }
