@@ -52,6 +52,7 @@ namespace GestaoRHWPF.Views.Remover
 
                 if (funcionario != null)
                 {
+
                     if (FuncionarioDAO.Remover(funcionario))
                     {
                         MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Funcionários",
