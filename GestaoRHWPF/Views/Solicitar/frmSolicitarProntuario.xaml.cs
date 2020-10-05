@@ -48,22 +48,33 @@ namespace GestaoRHWPF.Views.Solicitar
             {
 
                 int id = (int)cboFuncionarios.SelectedValue;
-                Prontuario prontuario = ProntuarioDAO.BuscarPorIdFuncionarioP(id);
+                if (ProntuarioDAO.BuscarPorIdFuncionarioP(id) != null)
+                {
 
-                //int idC = (int)cboCaixa.SelectedValue;
-                //prontuario.Caixa = CaixaDAO.BuscarPorId(idC);
+                    Prontuario prontuario = ProntuarioDAO.BuscarPorIdFuncionarioP(id);
 
-                PopularItensSolicitacao(prontuario);
-                PopularDataGrid(prontuario);
+                    //int idC = (int)cboCaixa.SelectedValue;
+                    //prontuario.Caixa = CaixaDAO.BuscarPorId(idC);
 
-                dtaSolicitacoes.ItemsSource = itens;
-                dtaSolicitacoes.Items.Refresh();
+                    PopularItensSolicitacao(prontuario);
+                    PopularDataGrid(prontuario);
+                    dtaSolicitacoes.ItemsSource = itens;
+                    dtaSolicitacoes.Items.Refresh();
 
 
 
-                //MessageBox.Show("Solicitação realizada com sucesso!", "Solicitação de Prontuários",
-                //    MessageBoxButton.OK, MessageBoxImage.Information);
-                btnCadastrarSolicitacao.IsEnabled = true;
+                    //MessageBox.Show("Solicitação realizada com sucesso!", "Solicitação de Prontuários",
+                    //    MessageBoxButton.OK, MessageBoxImage.Information);
+                    btnCadastrarSolicitacao.IsEnabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Não é possível realizar esta solicitação, uma vez que um prontuário com esta matrícula ainda não foi cadastrado!", "Solicitação de Prontuários",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    itens.Clear();
+                    dtaSolicitacoes.Items.Refresh();
+                    solicitacao.Itens.Clear();
+                }
             }
             else
             {
@@ -84,7 +95,6 @@ namespace GestaoRHWPF.Views.Solicitar
         }
         private void PopularDataGrid(Prontuario prontuario)
         {
-
             itens.Add(new
             {
                 //Matricula = prontuario.Funcionario.Matricula,
@@ -108,23 +118,24 @@ namespace GestaoRHWPF.Views.Solicitar
             {
                 MessageBox.Show($"Solicitação realizada! O número de sua solicitação é: [{id}]", "Solicitação de Prontuários",
                MessageBoxButton.OK, MessageBoxImage.Information);
+                LimparFormulario();
             }
             else
             {
                 MessageBox.Show("Erro! Algum prontuário já possui uma solicitação em aberto", "Solicitação de Prontuários",
                MessageBoxButton.OK, MessageBoxImage.Error);
+                itens.Clear();
+                dtaSolicitacoes.Items.Refresh();
+                solicitacao.Itens.Clear();
+
             }
 
-            LimparFormulario();
         }
 
         private void LimparFormulario()
         {
             txtNomeFuncionario.Clear();
             cboFuncionarios.Text = "";
-            itens.Clear();
-            dtaSolicitacoes.Items.Refresh();
-            solicitacao.Itens.Clear();
             btnCadastrarSolicitacao.IsEnabled = false;
             txtNomeFuncionario.Focus();
             Close();

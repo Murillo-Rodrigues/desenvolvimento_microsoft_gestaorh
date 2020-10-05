@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Cadastrar"
         mc:Ignorable="d"
-        Title="Cadastrar Funcionário" Height="360" Width="400" WindowStartupLocation="CenterScreen" FontSize="16" FontWeight="Medium">
+        Title="Cadastrar Funcionários" Height="385" Width="736" WindowStartupLocation="CenterScreen" FontSize="16" FontWeight="Medium">
     <Grid>
-        <Button x:Name="btnCadastrarFuncionario" Content="Cadastrar" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Height="45" Width="116" Click="btnCadastrarFuncionario_Click" TabIndex="3"/>
-        <Label Content="Cadastrar Funcionário" FontSize="18" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Id:" HorizontalAlignment="Left" Margin="11,49,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nome:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>
-        <Label Content="Matrícula:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cpf:" HorizontalAlignment="Left" Margin="11,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Criado em:" HorizontalAlignment="Left" Margin="12,193,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="106,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="106,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" TabIndex="0"/>
-        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="106,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" TabIndex="1"/>
-        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="106,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" TabIndex="2"/>
-        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="106,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" IsEnabled="False"/>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Images/CadastroFuncionarios.jpg"/>
+        </Grid.Background>
+        <Label Content="Cadastrar Funcionários" FontSize="25" FontWeight="Medium" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Insira todos os dados abaixo para realizar o cadastro de um funcionário!" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" Height="29" Width="462"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="14,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Matrícula:" HorizontalAlignment="Left" Margin="14,149,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cpf:" HorizontalAlignment="Left" Margin="14,185,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="110,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="0"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="110,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="1"/>
+        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="110,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="2"/>
+        <Button x:Name="btnCadastrarFuncionario" Content="Cadastrar" HorizontalAlignment="Left" Margin="306,262,0,0" VerticalAlignment="Top" Height="59" Width="158" Click="btnCadastrarFuncionario_Click" TabIndex="3" Background="{x:Null}"/>
 
     </Grid>
 </Window>

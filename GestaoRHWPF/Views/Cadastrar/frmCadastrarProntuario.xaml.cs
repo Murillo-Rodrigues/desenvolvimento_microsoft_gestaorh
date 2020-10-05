@@ -54,7 +54,7 @@ namespace GestaoRHWPF.Views.Cadastrar
 
         private void btnCadastrarProntuario_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text) || !string.IsNullOrWhiteSpace(cboCaixas.Text))
+            if (!string.IsNullOrWhiteSpace(cboFuncionarios.Text) && !string.IsNullOrWhiteSpace(cboCaixas.Text))
             {
                 int id = (int)cboFuncionarios.SelectedValue;
                 Funcionario funcionario = FuncionarioDAO.BuscarPorId(id);

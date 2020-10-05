@@ -152,3 +152,5 @@ C:\CDEV\GestaoRH\GestaoRHWPF\obj\Debug\netcoreapp3.1\GestaoRHWPF.csproj.CopyComp
 C:\CDEV\GestaoRH\GestaoRHWPF\obj\Debug\netcoreapp3.1\GestaoRHWPF.dll
 C:\CDEV\GestaoRH\GestaoRHWPF\obj\Debug\netcoreapp3.1\GestaoRHWPF.pdb
 C:\CDEV\GestaoRH\GestaoRHWPF\obj\Debug\netcoreapp3.1\GestaoRHWPF.genruntimeconfig.cache
+C:\CDEV\GestaoRH\GestaoRHWPF\obj\Debug\netcoreapp3.1\Views\Solicitar\frmListarSolicitacoes.g.cs
+C:\CDEV\GestaoRH\GestaoRHWPF\obj\Debug\netcoreapp3.1\Views\Solicitar\frmListarSolicitacoes.baml

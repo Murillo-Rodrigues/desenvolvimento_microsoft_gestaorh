@@ -5,37 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views"
         mc:Ignorable="d"
-        Title="GestaoRH WPF" Height="980" Width="1500" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="GestaoRH WPF" Height="811" Width="1228" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/3 - Redimensionado 1500x980______5_____.jpg"/>
+            <ImageBrush ImageSource="/Images/FormulárioPrincipal.jpg"/>
         </Grid.Background>
-        <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="20" Width="1500" Foreground="White" FontSize="13" FontWeight="Normal" Background="#FF2F2F32" BorderThickness="1,1,1,1">
-            <MenuItem Header="_Arquivo">
-                <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="20" Width="1228" Foreground="White" FontSize="13" FontWeight="Normal" Background="#FF2F2F32" BorderThickness="1,1,1,1" TabIndex="0" >
+            <MenuItem Header="_Arquivo" TabIndex="1">
+                <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click" Background="Black"/>
             </MenuItem>
-            <MenuItem Header="_Cadastrar">
-                <MenuItem x:Name="menuCadastrarFuncionario" Header="_Funcionario" Click="menuCadastrarFuncionario_Click"/>
-                <MenuItem x:Name="menuCadastrarCaixa" Header="_Caixa" Click="menuCadastrarCaixa_Click"/>
-                <MenuItem x:Name="menuCadastrarProntuario" Header="_Prontuario" Click="menuCadastrarProntuario_Click"/>
+            <MenuItem Header="_Cadastrar" TabIndex="2">
+                <MenuItem x:Name="menuCadastrarFuncionario" Header="_Funcionario" Click="menuCadastrarFuncionario_Click" Background="Black" BorderBrush="#FF810000"/>
+                <MenuItem x:Name="menuCadastrarCaixa" Header="_Caixa" Click="menuCadastrarCaixa_Click" Background="Black"/>
+                <MenuItem x:Name="menuCadastrarProntuario" Header="_Prontuario" Click="menuCadastrarProntuario_Click" Background="Black"/>
             </MenuItem>
-            <MenuItem Header="_Buscar">
-                <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click"/>
-                <MenuItem x:Name="menuBuscarCaixa" Header="_Caixa" Click="menuBuscarCaixa_Click"/>
-                <MenuItem x:Name="menuBuscarProntuario" Header="_Prontuario" Click="menuBuscarProntuario_Click"/>
+            <MenuItem Header="_Buscar" TabIndex="3">
+                <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click" Background="Black"/>
+                <MenuItem x:Name="menuBuscarCaixa" Header="_Caixa" Click="menuBuscarCaixa_Click" Background="Black"/>
+                <MenuItem x:Name="menuBuscarProntuario" Header="_Prontuario" Click="menuBuscarProntuario_Click" Background="Black"/>
+                <!--<MenuItem x:Name="menuBuscarSolicitacoes" Header="_Solicitacao" Click="menuBuscarSolicitacoes_Click" Background="Black"/>-->
             </MenuItem>
-            <MenuItem Header="_Remover/Alterar">
-                <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click"/>
-                <MenuItem x:Name="menuRemoverCaixa" Header="_Caixa" Click="menuRemoverCaixa_Click"/>
-                <MenuItem x:Name="menuRemoverProntuario" Header="_Prontuario" Click="menuRemoverProntuario_Click" />
+            <MenuItem Header="_Remover" TabIndex="4">
+                <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click" Background="Black"/>
+                <MenuItem x:Name="menuRemoverCaixa" Header="_Caixa" Click="menuRemoverCaixa_Click" Background="Black"/>
+                <MenuItem x:Name="menuRemoverProntuario" Header="_Prontuario" Click="menuRemoverProntuario_Click" Background="Black"/>
             </MenuItem>
-            <MenuItem Header="_Solicitar">
-                <MenuItem x:Name="menuSolicitarProntuario" Header="_Prontuario" Click="menuSolicitarProntuario_Click"/>
+            <MenuItem Header="_Solicitar" TabIndex="5">
+                <MenuItem x:Name="menuSolicitarProntuario" Header="_Prontuario" Click="menuSolicitarProntuario_Click" Background="Black"/>
             </MenuItem>
-            <MenuItem Header="S_obre"/>
+            <MenuItem Header="S_obre" TabIndex="6"/>
         </Menu>
-        <Button x:Name="btnCadastrarFuncionario" Content="" HorizontalAlignment="Left" Margin="-42,114,0,0" VerticalAlignment="Top" Height="55" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnCadastrarFuncionario_Click" BorderBrush="Black" Background="Black" >
+        <Button x:Name="btnCadastrarFuncionario" Content="" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" Height="50" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnCadastrarFuncionario_Click" BorderBrush="Black" Background="Black" TabIndex="7" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>
@@ -58,7 +59,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnListarFuncionario" Content="" HorizontalAlignment="Left" Margin="-42,183,0,0" VerticalAlignment="Top" Height="53" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnListarFuncionario_Click" BorderBrush="Black" >
+        <Button x:Name="btnListarFuncionario" Content="" HorizontalAlignment="Left" Margin="0,146,0,0" VerticalAlignment="Top" Height="49" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnListarFuncionario_Click" BorderBrush="Black" TabIndex="8" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>
@@ -81,77 +82,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnRemoverFuncionario" Content="" HorizontalAlignment="Left" Margin="-42,250,0,0" VerticalAlignment="Top" Height="52" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnRemoverFuncionario_Click" BorderBrush="Black" >
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="{x:Null}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Black"/>
-                            <Setter Property="Opacity" Value="10"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-
-        <Button x:Name="btnCadastrarCaixa" Content="" HorizontalAlignment="Left" Margin="-42,336,0,0" VerticalAlignment="Top" Height="56" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Background="Black" Click="btnCadastrarCaixa_Click" >
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="{x:Null}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Black"/>
-                            <Setter Property="Opacity" Value="10"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        <Button x:Name="btnListarCaixa" Content="" HorizontalAlignment="Left" Margin="-42,404,0,0" VerticalAlignment="Top" Height="52" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2"  BorderBrush="Black" Click="btnListarCaixa_Click" >
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="{x:Null}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Black"/>
-                            <Setter Property="Opacity" Value="10"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        <Button x:Name="btnRemoverCaixa" Content="" HorizontalAlignment="Left" Margin="-42,470,0,0" VerticalAlignment="Top" Height="52" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Click="btnRemoverCaixa_Click" >
+        <Button x:Name="btnRemoverFuncionario" Content="" HorizontalAlignment="Left" Margin="0,198,0,0" VerticalAlignment="Top" Height="51" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" Click="btnRemoverFuncionario_Click" BorderBrush="Black" TabIndex="9" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>
@@ -175,7 +106,7 @@
             </Button.Style>
         </Button>
 
-        <Button x:Name="btnCadastrarProntuario" Content="" HorizontalAlignment="Left" Margin="-42,557,0,0" VerticalAlignment="Top" Height="56" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Background="Black" Click="btnCadastrarProntuario_Click" >
+        <Button x:Name="btnCadastrarCaixa" Content="" HorizontalAlignment="Left" Margin="0,268,0,0" VerticalAlignment="Top" Height="52" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Background="Black" Click="btnCadastrarCaixa_Click" TabIndex="10" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>
@@ -198,7 +129,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnListarProntuario" Content="" HorizontalAlignment="Left" Margin="-42,625,0,0" VerticalAlignment="Top" Height="52" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2"  BorderBrush="Black" Click="btnListarProntuario_Click" >
+        <Button x:Name="btnListarCaixa" Content="" HorizontalAlignment="Left" Margin="0,322,0,0" VerticalAlignment="Top" Height="48" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2"  BorderBrush="Black" Click="btnListarCaixa_Click" TabIndex="11" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>
@@ -221,7 +152,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnRemoverProntuario" Content="" HorizontalAlignment="Left" Margin="-42,691,0,0" VerticalAlignment="Top" Height="52" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Click="btnRemoverProntuario_Click" >
+        <Button x:Name="btnRemoverCaixa" Content="" HorizontalAlignment="Left" Margin="0,375,0,0" VerticalAlignment="Top" Height="58" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Click="btnRemoverCaixa_Click" TabIndex="12" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>
@@ -245,7 +176,77 @@
             </Button.Style>
         </Button>
 
-        <Button x:Name="btnSolicitarProntuario" Content="" HorizontalAlignment="Left" Margin="-42,835,0,0" VerticalAlignment="Top" Height="57" Width="426" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Click="btnSolicitarProntuario_Click" >
+        <Button x:Name="btnCadastrarProntuario" Content="" HorizontalAlignment="Left" Margin="0,444,0,0" VerticalAlignment="Top" Height="47" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Background="Black" Click="btnCadastrarProntuario_Click" TabIndex="13" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Opacity" Value="10"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnListarProntuario" Content="" HorizontalAlignment="Left" Margin="0,500,0,0" VerticalAlignment="Top" Height="48" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2"  BorderBrush="Black" Click="btnListarProntuario_Click" TabIndex="14" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Opacity" Value="10"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnRemoverProntuario" Content="" HorizontalAlignment="Left" Margin="0,553,0,0" VerticalAlignment="Top" Height="53" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Click="btnRemoverProntuario_Click" TabIndex="15" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="50" Focusable="True" BorderBrush="Beige" Opacity="-1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Opacity" Value="10"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnSolicitarProntuario" Content="" HorizontalAlignment="Left" Margin="0,670,0,0" VerticalAlignment="Top" Height="52" Width="319" FontSize="18" FontStretch="Normal" FontWeight="Medium" BorderThickness="2,2,2,2" BorderBrush="Black" Click="btnSolicitarProntuario_Click" TabIndex="16" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{x:Null}"/>

@@ -138,5 +138,11 @@ namespace GestaoRHWPF.Views
         {
             menuSolicitarProntuario_Click(sender, e);
         }
+
+        private void menuBuscarSolicitacoes_Click(object sender, RoutedEventArgs e)
+        {
+            frmListarSolicitacoes frmlistarsolicitacoes = new frmListarSolicitacoes();
+            frmlistarsolicitacoes.Show();
+        }
     }
 }

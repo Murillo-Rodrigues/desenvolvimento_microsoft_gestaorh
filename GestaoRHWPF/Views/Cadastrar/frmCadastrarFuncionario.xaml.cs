@@ -13,11 +13,12 @@ namespace GestaoRHWPF.Views.Cadastrar
         {
             InitializeComponent();
             txtNome.Focus();
+
         }
 
         private void btnCadastrarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNome.Text))
+            if (!string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text))
             {
                 Funcionario funcionario = new Funcionario
                 {
@@ -33,24 +34,27 @@ namespace GestaoRHWPF.Views.Cadastrar
                 }
                 else
                 {
-                    MessageBox.Show("Este funcionário já existe!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Um funcionário com esta matrícula já existe!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
                     LimparFormulario();
                 }
             }
             else
             {
-                MessageBox.Show("Preencha o nome!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Preencha todos os campos para realizar o cadastro!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void LimparFormulario()
         {
-            txtId.Clear();
             txtNome.Clear();
             txtMatricula.Clear();
             txtCpf.Clear();
-            txtCriadoEm.Clear();
             txtNome.Focus();
+        }
+
+        private void txtNome_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+
         }
     }
 }

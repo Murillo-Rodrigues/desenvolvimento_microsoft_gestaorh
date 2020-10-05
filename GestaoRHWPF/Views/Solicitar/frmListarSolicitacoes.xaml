@@ -1,0 +1,19 @@
+﻿<Window x:Class="GestaoRHWPF.Views.Solicitar.frmListarSolicitacoes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoRHWPF.Views.Solicitar"
+        mc:Ignorable="d"
+        Title="frmListarSolicitacoes" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="dtaSolicitacoes" AutoGenerateColumns="False" Margin="10,49,10,21" FontSize="18" FontWeight="Medium">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matrícula do Funcionário" Width="1*" Binding="{Binding Funcionario}"/>
+                <DataGridTextColumn Header="Custódia" Width="1*" Binding="{Binding Caixa}"/>
+                <DataGridTextColumn Header="Criado Em" Width="1*" Binding="{Binding CriadoEm}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

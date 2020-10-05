@@ -17,7 +17,7 @@ namespace GestaoRHWPF.Views.Cadastrar
 
         private void btnCadastrarCaixa_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text) || !string.IsNullOrWhiteSpace(txtCustodia.Text))
+            if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text) && !string.IsNullOrWhiteSpace(txtCustodia.Text))
             {
                 Caixa caixa = new Caixa
                 {
@@ -51,17 +51,15 @@ namespace GestaoRHWPF.Views.Cadastrar
             }
             else
             {
-                MessageBox.Show("Preencha todos os campos!", "Cadastro de Caixas",
+                MessageBox.Show("Preencha todos os campos para realizar o cadastro!!", "Cadastro de Caixas",
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void LimparFormulario()
         {
-            txtId.Clear();
             txtNumeroCaixa.Clear();
             txtCustodia.Clear();
-            txtCriadoEm.Clear();
             txtNumeroCaixa.Focus();
         }
 

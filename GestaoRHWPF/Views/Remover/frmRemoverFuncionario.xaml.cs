@@ -29,7 +29,7 @@ namespace GestaoRHWPF.Views.Remover
                     txtCriadoEm.Text = funcionario.CriadoEm.ToString();
                     btnRemover.IsEnabled = true;
                     btnAlterar.IsEnabled = true;
-                    
+
                 }
                 else
                 {
@@ -46,7 +46,7 @@ namespace GestaoRHWPF.Views.Remover
 
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtMatricula.Text))
+            if (!string.IsNullOrEmpty(txtMatricula.Text) || !string.IsNullOrWhiteSpace(txtNome.Text) || !string.IsNullOrWhiteSpace(txtCpf.Text))
             {
                 //funcionario = new Funcionario();
 
@@ -64,7 +64,7 @@ namespace GestaoRHWPF.Views.Remover
                     }
                     else
                     {
-                        MessageBox.Show("Não é possivel remover um funcionário com prontuários vinculados   !", "Remoção de Funcionários",
+                        MessageBox.Show("Não é possivel remover um funcionário com prontuários vinculados!", "Remoção de Funcionários",
                             MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
@@ -77,19 +77,9 @@ namespace GestaoRHWPF.Views.Remover
             }
             else
             {
-                MessageBox.Show("Preencha o campo MATRÍCULA!", "Remoção de Funcionários",
+                MessageBox.Show("É necessário preencher todos os campos!", "Remoção de Funcionários",
                        MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void LimparFormulario()
-        {
-            txtId.Clear();
-            txtNome.Clear();
-            txtMatricula.Clear();
-            txtCpf.Clear();
-            txtCriadoEm.Clear();
-            txtMatricula.Focus();
         }
 
         private void btnAlterar_Click(object sender, RoutedEventArgs e)
@@ -104,7 +94,7 @@ namespace GestaoRHWPF.Views.Remover
 
         private void btnConcluir_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtMatricula.Text))
+            if (!string.IsNullOrEmpty(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text))
             {
                 //funcionario = new Funcionario();
 
@@ -118,35 +108,49 @@ namespace GestaoRHWPF.Views.Remover
 
                     if (FuncionarioDAO.Alterar(funcionario))
                     {
+
                         MessageBox.Show("Alteração concluída com sucesso!", "Remoção de Funcionários",
                             MessageBoxButton.OK, MessageBoxImage.Information);
-                        LimparFormulario();
-                        btnRemover.IsEnabled = false;
+
+                        btnRemover.IsEnabled = true;
+                        btnRemover.Visibility = Visibility.Visible;
+                        btnConcluir.Visibility = Visibility.Hidden;
+                        txtNome.IsEnabled = false;
+                        txtCpf.IsEnabled = false;
+
+
                     }
                     else
                     {
                         MessageBox.Show("Não é possivel alterar um funcionário com prontuários vinculados!", "Remoção de Funcionários",
                             MessageBoxButton.OK, MessageBoxImage.Error);
+                        LimparFormulario();
                     }
                 }
                 else
                 {
                     MessageBox.Show("O funcionário não existe na base!", "Remoção de Funcionários",
                         MessageBoxButton.OK, MessageBoxImage.Error);
+                    LimparFormulario();
                 }
 
             }
             else
             {
-                MessageBox.Show("Preencha o campo MATRÍCULA!", "Remoção de Funcionários",
+                MessageBox.Show("É necessário preencher todos os campos!", "Remoção de Funcionários",
                        MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            btnRemover.Visibility = Visibility.Visible;
-            btnConcluir.Visibility = Visibility.Hidden;
-            txtNome.IsEnabled = false;
-            txtCpf.IsEnabled = false;
-            LimparFormulario();
+        }
+
+        private void LimparFormulario()
+        {
+            txtId.Clear();
+            txtNome.Clear();
+            txtMatricula.Clear();
+            txtCpf.Clear();
+            txtCriadoEm.Clear();
+            txtMatricula.Focus();
         }
     }
 }

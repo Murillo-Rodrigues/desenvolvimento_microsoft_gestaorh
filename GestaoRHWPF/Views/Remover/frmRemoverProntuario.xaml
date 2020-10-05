@@ -5,21 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Remover"
         mc:Ignorable="d"
-        Title="Remover Prontuário" Height="402" Width="445" WindowStartupLocation="CenterScreen">
+        Title="Remoção de Prontuários" Height="501" Width="643" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Remoção de Prontuário:" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" FontSize="18" FontStretch="Medium" FontWeight="Medium"/>
-        <Label Content="Por favor, insira a matrícula do funcionário:" HorizontalAlignment="Left" Margin="102,49,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Normal" FontStyle="Normal" FontWeight="Normal"/>
-        <Label Content="Id:" HorizontalAlignment="Left" Margin="25,92,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
-        <Label Content="Matrícula do funcionário:" HorizontalAlignment="Left" Margin="25,128,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
-        <Label Content="Nome do funcionário:" HorizontalAlignment="Left" Margin="24,164,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
-        <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="24,202,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
-        <Label Content="Criado em:" HorizontalAlignment="Left" Margin="24,238,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="222,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" IsEnabled="False"/>
-        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="222,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" TabIndex="0"/>
-        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="222,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" IsEnabled="False"/>
-        <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="221,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" IsEnabled="False"/>
-        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="221,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Height="24" IsEnabled="False"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="94,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="1" Click="btnBuscar_Click"/>
-        <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="238,305,0,0" VerticalAlignment="Top" Height="37" Width="126" TabIndex="2" IsEnabled="False" Click="btnRemover_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/RemoverProntuario.jpeg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label Content="Remoção de Prontuário:" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" FontSize="22" FontStretch="Medium" FontWeight="Bold"/>
+        <Label Content="Insira a matrícula do funcionário para realizar a remoção" HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14" FontStretch="Normal" FontStyle="Normal" FontWeight="Bold"/>
+
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="20,118,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+        <Label Content="Matrícula do funcionário:" HorizontalAlignment="Left" Margin="19,157,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+        <Label Content="Nome do funcionário:" HorizontalAlignment="Left" Margin="20,193,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+        <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="19,229,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+        <Label Content="Custódia:" HorizontalAlignment="Left" Margin="20,264,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+        <Label Content="Criado em:" HorizontalAlignment="Left" Margin="19,301,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="227,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="227,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" TabIndex="0" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="227,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="227,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="227,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="227,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
+
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="167,380,0,0" VerticalAlignment="Top" Height="52" Width="153" TabIndex="1" Click="btnBuscar_Click" FontSize="15"/>
+        <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="342,380,0,0" VerticalAlignment="Top" Height="52" Width="152" TabIndex="2" IsEnabled="False" Click="btnRemover_Click" FontSize="15"/>
     </Grid>
 </Window>

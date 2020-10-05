@@ -1,4 +1,5 @@
 ﻿using GestaoRHWPF.DAL;
+using GestaoRHWPF.Models;
 using System.Windows;
 
 namespace GestaoRHWPF.Views.Buscar
@@ -16,6 +17,14 @@ namespace GestaoRHWPF.Views.Buscar
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dtaCaixas.ItemsSource = CaixaDAO.Listar();
+            Caixa caixa = new Caixa();
+
+            dynamic item = new
+            {
+                NumeroCaixa = caixa.NumeroCaixa,
+                Custodia = caixa.Custodia,
+                CriadoEm = caixa.CriadoEm
+            };
         }
     }
 }

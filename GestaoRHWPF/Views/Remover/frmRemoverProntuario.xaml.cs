@@ -27,6 +27,7 @@ namespace GestaoRHWPF.Views.Remover
                     txtMatricula.Text = prontuario.Funcionario.Matricula;
                     txtNomeFuncionario.Text = prontuario.Funcionario.Nome;
                     txtNumeroCaixa.Text = prontuario.Caixa.NumeroCaixa;
+                    txtCustodia.Text = prontuario.Caixa.Custodia;
                     txtCriadoEm.Text = prontuario.CriadoEm.ToString();
                     btnRemover.IsEnabled = true;
                 }
@@ -51,11 +52,18 @@ namespace GestaoRHWPF.Views.Remover
 
                 if (prontuario != null)
                 {
-                    ProntuarioDAO.Remover(prontuario);
-                    MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Prontuários",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
-                    LimparFormulario();
-                    btnRemover.IsEnabled = false;
+                    if (ProntuarioDAO.Remover(prontuario))
+                    {
+                        MessageBox.Show("Remoção concluída com sucesso!", "Remoção de Prontuários",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        LimparFormulario();
+                        btnRemover.IsEnabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é possível remover um prontuário com solicitação aberta!", "Remoção de Prontuários",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
@@ -77,6 +85,7 @@ namespace GestaoRHWPF.Views.Remover
             txtMatricula.Clear();
             txtNomeFuncionario.Clear();
             txtNumeroCaixa.Clear();
+            txtCustodia.Clear();
             txtCriadoEm.Clear();
             txtMatricula.Focus();
         }

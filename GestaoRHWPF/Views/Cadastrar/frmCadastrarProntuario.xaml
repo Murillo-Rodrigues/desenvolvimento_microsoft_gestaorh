@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Cadastrar"
         mc:Ignorable="d"
-        Title="Cadastro de Prontuários" Height="362" Width="628" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Prontuários" Height="488" Width="820" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black"/>
@@ -13,16 +13,21 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <ComboBox x:Name="cboFuncionarios" HorizontalAlignment="Left" Margin="44,118,0,0" VerticalAlignment="Top" Width="195" Height="27" FontSize="16" DropDownClosed="cboFuncionarios_DropDownClosed"/>
-        <ComboBox x:Name="cboCaixas" HorizontalAlignment="Left" Margin="398,118,0,0" VerticalAlignment="Top" Width="195" Height="27" FontSize="16" DropDownClosed="cboCaixas_DropDownClosed"/>
-        <Button x:Name="btnCadastrarProntuario" Content="Cadastrar Prontuário" HorizontalAlignment="Center" Margin="0,262,0,0" VerticalAlignment="Top" Height="54" Width="139" Click="btnCadastrarProntuario_Click"/>
-        <Label Content="Cadastro de Prontuários" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Foreground="White" FontSize="17" FontWeight="Medium"/>
-        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="39,79,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label Content="Selecione o número da caixa:" HorizontalAlignment="Left" Margin="414,79,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="74,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
-        <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="421,193,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White"/>
-        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="44,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
-        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="398,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="195" Height="29" IsEnabled="False" FontSize="15" FontWeight="Medium" Background="White"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/CadastroProntuarios.jpg" TileMode="None" Stretch="Fill"/>
+        </Grid.Background>
+        <Label Content="Cadastro de Prontuários" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28" FontWeight="Medium"/>
 
+        <Label Content="Selecione a matrícula do funcionário:" HorizontalAlignment="Left" Margin="57,95,0,0" VerticalAlignment="Top" Foreground="White" Height="32" Width="260"/>
+        <ComboBox x:Name="cboFuncionarios" HorizontalAlignment="Left" Margin="51,143,0,0" VerticalAlignment="Top" Width="253" Height="33" FontSize="16" DropDownClosed="cboFuncionarios_DropDownClosed"/>
+        <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="51,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" Height="37" IsEnabled="False" FontSize="16" FontWeight="Medium"/>
+        <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="105,248,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White" Height="32" Width="164"/>
+
+        <Label Content="Selecione o número da caixa:" HorizontalAlignment="Left" Margin="513,95,0,0" VerticalAlignment="Top" Foreground="White" Height="32" Width="188"/>
+        <ComboBox x:Name="cboCaixas" HorizontalAlignment="Left" Margin="472,143,0,0" VerticalAlignment="Top" Width="254" Height="33" FontSize="16" DropDownClosed="cboCaixas_DropDownClosed"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="473,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" Height="37" IsEnabled="False" FontSize="16" FontWeight="Medium" Background="White"/>
+        <Label Content="Corredor - Estante - Altura" HorizontalAlignment="Left" Margin="521,248,0,0" VerticalAlignment="Top" IsEnabled="False" Foreground="White" Height="31" Width="172"/>
+
+        <Button x:Name="btnCadastrarProntuario" Content="Cadastrar" HorizontalAlignment="Center" Margin="0,362,0,0" VerticalAlignment="Top" Height="59" Width="148" Click="btnCadastrarProntuario_Click" Background="#FFDDDDDD"/>
     </Grid>
 </Window>

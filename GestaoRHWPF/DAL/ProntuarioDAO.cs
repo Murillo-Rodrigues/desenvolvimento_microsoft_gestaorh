@@ -18,6 +18,9 @@ namespace GestaoRHWPF.DAL
         public static Prontuario BuscarPorIdCaixaP(int id) =>
            _context.Prontuarios.FirstOrDefault(x => x.Caixa.Id == id);
 
+        public static ItemSolicitacao BuscarPorProntuarioSolicitado(int id) =>
+            _context.ItensSolicitacao.FirstOrDefault(x => x.Prontuario.Id == id);
+
 
         public static void Cadastrar(Prontuario prontuario)
         {
@@ -26,10 +29,15 @@ namespace GestaoRHWPF.DAL
 
         }
 
-        public static void Remover(Prontuario prontuario)
+        public static bool Remover(Prontuario prontuario)
         {
-            _context.Prontuarios.Remove(prontuario);
-            _context.SaveChanges();
+            if (BuscarPorProntuarioSolicitado(prontuario.Id) == null)
+            {
+                _context.Prontuarios.Remove(prontuario);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public static List<Prontuario> Listar() => _context.Prontuarios.Include(x => x.Funcionario).Include(x => x.Caixa).ToList();

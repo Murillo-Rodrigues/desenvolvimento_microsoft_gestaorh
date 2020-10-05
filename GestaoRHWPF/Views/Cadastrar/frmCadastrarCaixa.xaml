@@ -5,22 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Cadastrar"
         mc:Ignorable="d"
-        Title="Cadastrar Caixas" Height="377" Width="503" WindowStartupLocation="CenterScreen">
+        Title="Cadastrar Caixas" Height="379" Width="683" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Cadastrar Caixa" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Medium"/>
-        <Label Content="Id:" HorizontalAlignment="Left" Margin="35,71,0,0" VerticalAlignment="Top"/>
-        <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="35,102,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posição da Custódia:" HorizontalAlignment="Left" Margin="35,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="Criado Em:" HorizontalAlignment="Left" Margin="35,226,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="165,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
-        <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="165,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="0" MaxLength="9"/>
-        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="165,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="1" MaxLength="3" />
-        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="165,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
-        <Label Content="(9 dígitos)" HorizontalAlignment="Left" Margin="406,102,0,0" VerticalAlignment="Top"/>
-        <Label Content="(A-Z)" HorizontalAlignment="Left" Margin="406,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="(1-10)" HorizontalAlignment="Left" Margin="406,164,0,0" VerticalAlignment="Top"/>
-        <Label Content="(1-4)" HorizontalAlignment="Left" Margin="406,195,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnCadastrarCaixa" Content="Cadastrar Caixa" HorizontalAlignment="Left" Margin="228,284,0,0" VerticalAlignment="Top" Height="42" Width="102" TabIndex="5" Click="btnCadastrarCaixa_Click" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/CadastroCaixas.jpg"/>
+        </Grid.Background>
+        <Label Content="Cadastrar Caixas" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Medium"/>
+        <Label Content="Preencha os dados abaixo para realizar a criação de uma caixa!" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+        <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="17,128,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Background="{x:Null}" BorderThickness="0,0,0,0" Foreground="Black"/>
+        <Label Content="Posição da Custódia:" HorizontalAlignment="Left" Margin="17,168,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+        <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="181,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" TabIndex="0" MaxLength="9" Height="24" FontSize="15" FontWeight="Medium"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="181,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" TabIndex="1" MaxLength="3" Height="24" FontSize="15" FontWeight="Medium" Background="White" />
+        <Label Content="(9 dígitos)" HorizontalAlignment="Left" Margin="566,130,0,0" VerticalAlignment="Top" Height="28" Width="66"/>
+        <Button x:Name="btnCadastrarCaixa" Content="Cadastrar" HorizontalAlignment="Left" Margin="292,250,0,0" VerticalAlignment="Top" Height="45" Width="137" TabIndex="2" Click="btnCadastrarCaixa_Click" Background="#FFE6E6E6" FontSize="14" />
 
     </Grid>
 </Window>

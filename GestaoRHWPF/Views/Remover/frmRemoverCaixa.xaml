@@ -5,23 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Remover"
         mc:Ignorable="d"
-        Title="Remover Caixa" Height="408" Width="518" WindowStartupLocation="CenterScreen">
+        Title="Remoção de Caixas" Height="484" Width="571" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Remover Caixa" HorizontalAlignment="Left" Margin="204,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Medium"/>
-        <Label Content="Por favor, insira o número da caixa" HorizontalAlignment="Left" Margin="170,49,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" Height="33" Width="262"/>
-        <Label Content="Id:" HorizontalAlignment="Left" Margin="40,88,0,0" VerticalAlignment="Top"/>
-        <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="40,119,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posição da Custódia:" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/RemoverCaixa.jpg" Stretch="Uniform"/>
+        </Grid.Background>
+        <Label Content="Remoção de Caixas" HorizontalAlignment="Left" Margin="178,13,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Insira o número da caixa para realizar a remoção" HorizontalAlignment="Left" Margin="115,55,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium" Height="33" Width="374"/>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="21,129,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+        <Label Content="Número da Caixa:" HorizontalAlignment="Left" Margin="21,165,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+        <Label Content="Posição da Custódia:" HorizontalAlignment="Left" Margin="21,199,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Medium"/>
+        <Label Content="Criado Em:" HorizontalAlignment="Left" Margin="21,235,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.551,-0.057" FontWeight="Medium"/>
 
-        <Label Content="Criado Em:" HorizontalAlignment="Left" Margin="40,243,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="170,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
-        <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="170,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="0" MaxLength="9"/>
-        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="170,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TabIndex="1" MaxLength="1" IsEnabled="False"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="178,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" IsEnabled="False" FontSize="15" Height="29" FontWeight="Medium"/>
+        <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="178,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Height="29" TabIndex="0" MaxLength="9" FontSize="15" FontWeight="Medium"/>
+        <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="178,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353"  Height="29" MaxLength="1" IsEnabled="False" FontSize="15" FontWeight="Medium"/>
+        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="178,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353"  Height="29"  IsEnabled="False" FontSize="15" FontWeight="Medium"/>
 
-        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="170,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
-        <Label Content="(9 dígitos)" HorizontalAlignment="Left" Margin="410,119,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnBuscarCaixa" Content="Buscar" HorizontalAlignment="Left" Margin="136,300,0,0" VerticalAlignment="Top" Height="52" Width="120" TabIndex="5" Click="btnBuscarCaixa_Click"/>
-        <Button x:Name="btnRemoverCaixa" Content="Remover" HorizontalAlignment="Left" Margin="294,300,0,0" VerticalAlignment="Top" Height="52" Width="120" TabIndex="6" IsEnabled="False" Click="btnRemoverCaixa_Click"/>
+        <Button x:Name="btnBuscarCaixa" Content="Buscar" HorizontalAlignment="Left" Margin="126,365,0,0" VerticalAlignment="Top" Height="59" Width="146" TabIndex="1" Click="btnBuscarCaixa_Click" FontSize="15"/>
+        <Button x:Name="btnRemoverCaixa" Content="Remover" HorizontalAlignment="Left" Margin="318,365,0,0" VerticalAlignment="Top" Height="59" Width="147" TabIndex="2" IsEnabled="False" Click="btnRemoverCaixa_Click" FontSize="15"/>
 
     </Grid>
 </Window>

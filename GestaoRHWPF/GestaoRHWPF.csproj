@@ -8,11 +8,15 @@
 
   <ItemGroup>
     <None Remove="Views\2.jpg" />
-    <None Remove="Views\3 - Redimensionado 1500x980    2.jpg" />
-    <None Remove="Views\3 - Redimensionado 1500x980.jpg" />
-    <None Remove="Views\3 - Redimensionado 1500x980______3_____.jpg" />
-    <None Remove="Views\3 - Redimensionado 1500x980______4_____.jpg" />
-    <None Remove="Views\3 - Redimensionado 1500x980______5_____.jpg" />
+    <None Remove="Views\Buscar\Teste.png" />
+    <None Remove="Views\Cadastrar\CadastroCaixas.jpg" />
+    <None Remove="Views\Cadastrar\CadastroFuncionarios.jpg" />
+    <None Remove="Views\Cadastrar\CadastroProntuarios.jpg" />
+    <None Remove="Views\FormulárioPrincipal.jpg" />
+    <None Remove="Views\Remover\RemoverCaixa.jpg" />
+    <None Remove="Views\Remover\RemoverFuncionario.jpg" />
+    <None Remove="Views\Remover\RemoverProntuario.jpeg" />
+    <None Remove="Views\Solicitar\SolicitarProntuario.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,12 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\2.jpg" />
-    <Resource Include="Views\3 - Redimensionado 1500x980    2.jpg" />
-    <Resource Include="Views\3 - Redimensionado 1500x980.jpg" />
-    <Resource Include="Views\3 - Redimensionado 1500x980______3_____.jpg" />
-    <Resource Include="Views\3 - Redimensionado 1500x980______4_____.jpg" />
-    <Resource Include="Views\3 - Redimensionado 1500x980______5_____.jpg" />
+    <Resource Include="Images\CadastroFuncionarios.jpg" />
+    <Resource Include="Images\CadastroCaixas.jpg" />
+    <Resource Include="Images\FormulárioPrincipal.jpg" />
+    <Resource Include="Images\CadastroProntuarios.jpg" />
+    <Resource Include="Images\Listar.png" />
+    <Resource Include="Images\RemoverFuncionario.jpg" />
+    <Resource Include="Images\RemoverCaixa.jpg" />
+    <Resource Include="Images\RemoverProntuario.jpeg" />
+    <Resource Include="Images\SolicitarProntuario.jpg" />
   </ItemGroup>
 
 </Project>
