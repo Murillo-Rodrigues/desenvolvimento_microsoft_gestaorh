@@ -103,5 +103,40 @@ namespace GestaoRHWPF.Views
         {
             menuRemoverFuncionario_Click(sender, e);
         }
+
+        private void btnCadastrarCaixa_Click(object sender, RoutedEventArgs e)
+        {
+            menuCadastrarCaixa_Click(sender, e);
+        }
+
+        private void btnListarCaixa_Click(object sender, RoutedEventArgs e)
+        {
+            menuBuscarCaixa_Click(sender, e);
+        }
+
+        private void btnRemoverCaixa_Click(object sender, RoutedEventArgs e)
+        {
+            menuRemoverCaixa_Click(sender, e);
+        }
+
+        private void btnCadastrarProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            menuCadastrarProntuario_Click(sender, e);
+        }
+
+        private void btnListarProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            menuBuscarProntuario_Click(sender, e);
+        }
+
+        private void btnRemoverProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            menuRemoverProntuario_Click(sender, e);
+        }
+
+        private void btnSolicitarProntuario_Click(object sender, RoutedEventArgs e)
+        {
+            menuSolicitarProntuario_Click(sender, e);
+        }
     }
 }

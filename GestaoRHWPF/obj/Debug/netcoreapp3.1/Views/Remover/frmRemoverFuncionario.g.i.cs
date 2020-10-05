@@ -125,7 +125,7 @@ namespace GestaoRHWPF.Views.Remover {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestaoRHWPF;V1.0.0.0;component/views/remover/frmremoverfuncionario.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestaoRHWPF;component/views/remover/frmremoverfuncionario.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Remover\frmRemoverFuncionario.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

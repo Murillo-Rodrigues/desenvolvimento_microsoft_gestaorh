@@ -55,6 +55,7 @@ namespace GestaoRHWPF.Views.Solicitar
 
                 PopularItensSolicitacao(prontuario);
                 PopularDataGrid(prontuario);
+
                 dtaSolicitacoes.ItemsSource = itens;
                 dtaSolicitacoes.Items.Refresh();
 
@@ -83,6 +84,7 @@ namespace GestaoRHWPF.Views.Solicitar
         }
         private void PopularDataGrid(Prontuario prontuario)
         {
+
             itens.Add(new
             {
                 //Matricula = prontuario.Funcionario.Matricula,
@@ -90,7 +92,9 @@ namespace GestaoRHWPF.Views.Solicitar
                 NumeroCaixa = prontuario.Caixa.NumeroCaixa,
                 Custodia = prontuario.Caixa.Custodia,
                 CriadoEm = prontuario.CriadoEm,
+
             });
+
         }
 
         private void btnCadastrarSolicitacao_Click(object sender, RoutedEventArgs e)

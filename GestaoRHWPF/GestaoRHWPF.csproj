@@ -11,6 +11,8 @@
     <None Remove="Views\3 - Redimensionado 1500x980    2.jpg" />
     <None Remove="Views\3 - Redimensionado 1500x980.jpg" />
     <None Remove="Views\3 - Redimensionado 1500x980______3_____.jpg" />
+    <None Remove="Views\3 - Redimensionado 1500x980______4_____.jpg" />
+    <None Remove="Views\3 - Redimensionado 1500x980______5_____.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +28,8 @@
     <Resource Include="Views\3 - Redimensionado 1500x980    2.jpg" />
     <Resource Include="Views\3 - Redimensionado 1500x980.jpg" />
     <Resource Include="Views\3 - Redimensionado 1500x980______3_____.jpg" />
+    <Resource Include="Views\3 - Redimensionado 1500x980______4_____.jpg" />
+    <Resource Include="Views\3 - Redimensionado 1500x980______5_____.jpg" />
   </ItemGroup>
 
 </Project>
