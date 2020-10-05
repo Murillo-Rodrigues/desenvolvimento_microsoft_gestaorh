@@ -1,5 +1,6 @@
 ﻿using GestaoRHWPF.DAL;
 using GestaoRHWPF.Models;
+using GestaoRHWPF.Utils;
 using System.Windows;
 
 namespace GestaoRHWPF.Views.Cadastrar
@@ -12,30 +13,38 @@ namespace GestaoRHWPF.Views.Cadastrar
         public frmCadastrarFuncionario()
         {
             InitializeComponent();
-            txtNome.Focus();
+            txtMatricula.Focus();
 
         }
 
         private void btnCadastrarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text))
+            if (!string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && txtMatricula.Text.Length == 5 && txtCpf.Text.Length == 11)
             {
-                Funcionario funcionario = new Funcionario
+                if (Validacao.ValidarCpf(txtCpf.Text))
                 {
-                    Nome = txtNome.Text,
-                    Matricula = txtMatricula.Text,
-                    Cpf = txtCpf.Text
-                };
 
-                if (FuncionarioDAO.Cadastrar(funcionario))
-                {
-                    MessageBox.Show("Funcionário cadastrado com sucesso!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LimparFormulario();
+                    Funcionario funcionario = new Funcionario
+                    {
+                        Nome = txtNome.Text,
+                        Matricula = txtMatricula.Text,
+                        Cpf = txtCpf.Text
+                    };
+
+                    if (FuncionarioDAO.Cadastrar(funcionario))
+                    {
+                        MessageBox.Show("Funcionário cadastrado com sucesso!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Information);
+                        LimparFormulario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Um funcionário com esta matrícula já existe!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
+                        LimparFormulario();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Um funcionário com esta matrícula já existe!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
-                    LimparFormulario();
+                    MessageBox.Show("Este CPF não é válido!", "Cadastro de Funcionários", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -49,7 +58,7 @@ namespace GestaoRHWPF.Views.Cadastrar
             txtNome.Clear();
             txtMatricula.Clear();
             txtCpf.Clear();
-            txtNome.Focus();
+            txtMatricula.Focus();
         }
 
         private void txtNome_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)

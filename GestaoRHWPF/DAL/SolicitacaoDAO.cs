@@ -1,4 +1,5 @@
 ﻿using GestaoRHWPF.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +15,6 @@ namespace GestaoRHWPF.DAL
         public static Solicitacao BuscarPorIdSolicitacao(int id) =>
             _context.Solicitacoes.FirstOrDefault(x => x.Id == id);
 
-
         public static bool Cadastrar(Solicitacao solicitacao)
         {
             if (BuscarPorIdS(solicitacao.Funcionario.Id) == null)
@@ -26,8 +26,7 @@ namespace GestaoRHWPF.DAL
             return false;
         }
 
-
-        public static List<Solicitacao> Listar() => _context.Solicitacoes.ToList();
+        public static List<Solicitacao> Listar() => _context.Solicitacoes.Include(x => x.Funcionario).Include(x => x.Caixa).ToList();
 
     }
 }

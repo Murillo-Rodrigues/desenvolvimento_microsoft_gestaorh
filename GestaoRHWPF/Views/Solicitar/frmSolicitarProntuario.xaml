@@ -17,7 +17,9 @@
         <Label Content="Nome do Funcionário" HorizontalAlignment="Left" Margin="89,183,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="16" Height="37" Width="170" Foreground="Black" FontWeight="Medium"/>
 
         <Button x:Name="btnSolicitarProntuario" Content="ADD Prontuário(s) à solicitação" HorizontalAlignment="Left" Margin="60,345,0,0" VerticalAlignment="Top" Height="59" Width="228" Click="btnSolicitarProntuario_Click" FontSize="15" FontWeight="Regular" TabIndex="1"/>
-        <Button x:Name="btnCadastrarSolicitacao" Content="Cadastrar Solicitação" HorizontalAlignment="Left" Margin="60,421,0,0" VerticalAlignment="Top" Height="56" Width="228" Click="btnCadastrarSolicitacao_Click" IsEnabled="False" FontSize="15" FontWeight="Regular" TabIndex="2"/>
+        <Button x:Name="btnAdicionarMais" Content="Adicionar mais prontuários" HorizontalAlignment="Left" Margin="60,345,0,0" VerticalAlignment="Top" Height="59" Width="228" Visibility="Hidden" FontSize="15" FontWeight="Regular" TabIndex="1" Click="btnAdicionarMais_Click"/>
+        <Button x:Name="btnCadastrarSolicitacao" Content="Cadastrar Solicitação" HorizontalAlignment="Left" Margin="60,421,0,0" VerticalAlignment="Top" Height="56" Width="228" Click="btnCadastrarSolicitacao_Click" IsEnabled="False" Visibility="Hidden" FontSize="15" FontWeight="Regular" TabIndex="2"/>
+        <Button x:Name="btnConcluirAdd" Content="Concluir" HorizontalAlignment="Left" Margin="60,421,0,0" VerticalAlignment="Top" Height="56" Width="228" IsEnabled="False" FontSize="15" FontWeight="Regular" TabIndex="2" Click="btnConcluirAdd_Click"/>
         <DataGrid x:Name="dtaSolicitacoes" AutoGenerateColumns="False" Margin="348,62,21,72" FontSize="18" FontWeight="Medium">
             <DataGrid.Background>
                 <ImageBrush/>

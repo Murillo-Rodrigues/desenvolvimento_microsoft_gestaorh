@@ -65,15 +65,21 @@ namespace GestaoRHWPF.Views.Solicitar
 
                     //MessageBox.Show("Solicitação realizada com sucesso!", "Solicitação de Prontuários",
                     //    MessageBoxButton.OK, MessageBoxImage.Information);
-                    btnCadastrarSolicitacao.IsEnabled = true;
+                    btnConcluirAdd.IsEnabled = true;
+                    btnAdicionarMais.IsEnabled = true;
+                    btnAdicionarMais.Visibility = Visibility.Visible;
+                    btnSolicitarProntuario.IsEnabled = false;
+                    btnSolicitarProntuario.Visibility = Visibility.Hidden;
+
                 }
                 else
                 {
-                    MessageBox.Show("Não é possível realizar esta solicitação, uma vez que um prontuário com esta matrícula ainda não foi cadastrado!", "Solicitação de Prontuários",
+                    MessageBox.Show("Não é possível realizar esta solicitação, uma vez que um prontuário com esta matrícula ainda não foi cadastrado! O formulário será fechado!", "Solicitação de Prontuários",
                         MessageBoxButton.OK, MessageBoxImage.Error);
-                    itens.Clear();
-                    dtaSolicitacoes.Items.Refresh();
-                    solicitacao.Itens.Clear();
+                    //itens.Clear();
+                    //dtaSolicitacoes.Items.Refresh();
+                    //solicitacao.Itens.Clear();
+                    Close();
                 }
             }
             else
@@ -106,6 +112,27 @@ namespace GestaoRHWPF.Views.Solicitar
             });
 
         }
+        private void btnConcluirAdd_Click(object sender, RoutedEventArgs e)
+        {
+            btnCadastrarSolicitacao.IsEnabled = true;
+            btnCadastrarSolicitacao.Visibility = Visibility.Visible;
+            btnConcluirAdd.IsEnabled = false;
+            btnConcluirAdd.Visibility = Visibility.Hidden;
+            cboFuncionarios.IsEnabled = false;
+
+        }
+        private void btnAdicionarMais_Click(object sender, RoutedEventArgs e)
+        {
+            btnCadastrarSolicitacao.IsEnabled = false;
+            btnCadastrarSolicitacao.Visibility = Visibility.Hidden;
+            btnConcluirAdd.IsEnabled = false;
+            btnConcluirAdd.Visibility = Visibility.Visible;
+            btnSolicitarProntuario.IsEnabled = true;
+            btnSolicitarProntuario.Visibility = Visibility.Visible;
+            btnAdicionarMais.IsEnabled = false;
+            btnAdicionarMais.Visibility = Visibility.Hidden;
+            cboFuncionarios.IsEnabled = true;
+        }
 
         private void btnCadastrarSolicitacao_Click(object sender, RoutedEventArgs e)
         {
@@ -118,7 +145,7 @@ namespace GestaoRHWPF.Views.Solicitar
             {
                 MessageBox.Show($"Solicitação realizada! O número de sua solicitação é: [{id}]", "Solicitação de Prontuários",
                MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
+                Close();
             }
             else
             {
@@ -128,6 +155,16 @@ namespace GestaoRHWPF.Views.Solicitar
                 dtaSolicitacoes.Items.Refresh();
                 solicitacao.Itens.Clear();
 
+                btnCadastrarSolicitacao.IsEnabled = false;
+                btnCadastrarSolicitacao.Visibility = Visibility.Hidden;
+                btnConcluirAdd.IsEnabled = false;
+                btnConcluirAdd.Visibility = Visibility.Visible;
+                btnAdicionarMais.IsEnabled = false;
+                btnAdicionarMais.Visibility = Visibility.Hidden;
+                btnSolicitarProntuario.IsEnabled = true;
+                btnSolicitarProntuario.Visibility = Visibility.Visible;
+
+
             }
 
         }
@@ -136,9 +173,8 @@ namespace GestaoRHWPF.Views.Solicitar
         {
             txtNomeFuncionario.Clear();
             cboFuncionarios.Text = "";
-            btnCadastrarSolicitacao.IsEnabled = false;
-            txtNomeFuncionario.Focus();
-            Close();
+            cboFuncionarios.Focus();
         }
+
     }
 }

@@ -13,12 +13,15 @@ namespace GestaoRHWPF.Views.Cadastrar
         {
             InitializeComponent();
             txtNumeroCaixa.Focus();
+            txtCustodia.ToolTip = "É necessário preencher 3 caracteres: 1 - CORREDOR em que a caixa está (A-Z) , 2 - POSIÇÃO da estante (1-10), 3 - ALTURA da estante (1-4)    Ex: A11";
         }
+
 
         private void btnCadastrarCaixa_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text) && !string.IsNullOrWhiteSpace(txtCustodia.Text))
+            if (!string.IsNullOrWhiteSpace(txtNumeroCaixa.Text) && !string.IsNullOrWhiteSpace(txtCustodia.Text) && txtNumeroCaixa.Text.Length == 9 && txtCustodia.Text.Length == 3)
             {
+
                 Caixa caixa = new Caixa
                 {
                     NumeroCaixa = txtNumeroCaixa.Text,

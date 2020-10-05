@@ -21,7 +21,7 @@
         <Label Content="Criado em:" HorizontalAlignment="Left" Margin="19,301,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
 
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="227,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
-        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="227,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" TabIndex="0" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="227,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" TabIndex="0" FontSize="14" FontWeight="Medium" MaxLength="5"/>
         <TextBox x:Name="txtNomeFuncionario" HorizontalAlignment="Left" Margin="227,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
         <TextBox x:Name="txtNumeroCaixa" HorizontalAlignment="Left" Margin="227,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
         <TextBox x:Name="txtCustodia" HorizontalAlignment="Left" Margin="227,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" Height="24" IsEnabled="False" FontSize="14" FontWeight="Medium"/>

@@ -20,14 +20,14 @@
         <Label Content="Criado em:" HorizontalAlignment="Left" Margin="32,282,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="34" Width="95"/>
 
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="152,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="26" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
-        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="152,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="26" TabIndex="0" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="152,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="26" TabIndex="0" FontSize="14" FontWeight="Medium" MaxLength="5"/>
         <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="152,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="27" IsEnabled="False" TabIndex="1" FontSize="14" FontWeight="Medium"/>
-        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="152,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="27" IsEnabled="False" TabIndex="2" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="152,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="27" IsEnabled="False" TabIndex="2" FontSize="14" FontWeight="Medium" MaxLength="11"/>
         <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Margin="152,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Height="26" IsEnabled="False" FontSize="14" FontWeight="Medium"/>
 
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="39,365,0,0" VerticalAlignment="Top" Height="58" Width="169" TabIndex="3" Click="btnBuscar_Click" FontSize="16" Background="#FFDDDDDD"/>
         <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="229,365,0,0" VerticalAlignment="Top" Height="58" Width="170" TabIndex="4" Click="btnAlterar_Click" IsEnabled="False" FontSize="16" Background="#FFDDDDDD" />
-        <Button x:Name="btnConcluir" Content="Concluir" HorizontalAlignment="Left" Margin="421,365,0,0" VerticalAlignment="Top" Height="58" Width="169" TabIndex="5" IsEnabled="False" Visibility="Visible" Click="btnConcluir_Click" Background="#FFDDDDDD" />
+        <Button x:Name="btnConcluir" Content="Concluir" HorizontalAlignment="Left" Margin="421,365,0,0" VerticalAlignment="Top" Height="58" Width="169" TabIndex="5" IsEnabled="False" Visibility="Visible" FontSize="16" Click="btnConcluir_Click" Background="#FFDDDDDD" />
         <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="421,365,0,0" VerticalAlignment="Top" Height="58" Width="169" TabIndex="5" Click="btnRemover_Click" IsEnabled="False" FontSize="16" Background="#FFDDDDDD"/>
 
 

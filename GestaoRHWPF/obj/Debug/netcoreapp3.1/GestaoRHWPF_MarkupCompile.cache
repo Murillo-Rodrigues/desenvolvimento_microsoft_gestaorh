@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\CDEV\GestaoRH\GestaoRHWPF\App.xaml
-12630047906
+111443546558
 
-29-1465673227
+29-1247231361
 217764304066
-Views\Buscar\frmBuscarCaixa.xaml;Views\Buscar\frmBuscarFuncionario.xaml;Views\Buscar\frmBuscarProntuario.xaml;Views\Cadastrar\frmCadastrarCaixa.xaml;Views\Cadastrar\frmCadastrarFuncionario.xaml;Views\Cadastrar\frmCadastrarProntuario.xaml;Views\frmPrincipal.xaml;Views\Remover\frmRemoverCaixa.xaml;Views\Remover\frmRemoverFuncionario.xaml;Views\Remover\frmRemoverProntuario.xaml;Views\Solicitar\frmListarSolicitacoes.xaml;Views\Solicitar\frmSolicitarProntuario.xaml;
+Views\Buscar\frmBuscarCaixa.xaml;Views\Buscar\frmBuscarFuncionario.xaml;Views\Buscar\frmBuscarProntuario.xaml;Views\Cadastrar\frmCadastrarCaixa.xaml;Views\Cadastrar\frmCadastrarFuncionario.xaml;Views\Cadastrar\frmCadastrarProntuario.xaml;Views\frmPrincipal.xaml;Views\Remover\frmRemoverCaixa.xaml;Views\Remover\frmRemoverFuncionario.xaml;Views\Remover\frmRemoverProntuario.xaml;Views\Solicitar\frmSolicitarProntuario.xaml;
 
 False
 

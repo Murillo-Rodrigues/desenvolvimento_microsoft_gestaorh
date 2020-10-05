@@ -15,5 +15,6 @@ namespace GestaoRHWPF.Models
         public Funcionario Funcionario { get; set; }
         public Caixa Caixa { get; set; }
         public List<ItemSolicitacao> Itens { get; set; }
+
     }
 }

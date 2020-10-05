@@ -1,5 +1,6 @@
 ﻿using GestaoRHWPF.DAL;
 using GestaoRHWPF.Models;
+using GestaoRHWPF.Utils;
 using System.Windows;
 
 namespace GestaoRHWPF.Views.Remover
@@ -94,46 +95,53 @@ namespace GestaoRHWPF.Views.Remover
 
         private void btnConcluir_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text))
+            if (!string.IsNullOrEmpty(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && txtMatricula.Text.Length == 5 && txtCpf.Text.Length == 11)
             {
-                //funcionario = new Funcionario();
-
-                funcionario = FuncionarioDAO.BuscarPorMatricula(txtMatricula.Text);
-
-                if (funcionario != null)
+                if (Validacao.ValidarCpf(txtCpf.Text))
                 {
-                    funcionario.Matricula = txtMatricula.Text;
-                    funcionario.Cpf = txtCpf.Text;
-                    funcionario.Nome = txtNome.Text;
+                    //funcionario = new Funcionario();
 
-                    if (FuncionarioDAO.Alterar(funcionario))
+                    funcionario = FuncionarioDAO.BuscarPorMatricula(txtMatricula.Text);
+
+                    if (funcionario != null)
                     {
+                        funcionario.Matricula = txtMatricula.Text;
+                        funcionario.Cpf = txtCpf.Text;
+                        funcionario.Nome = txtNome.Text;
 
-                        MessageBox.Show("Alteração concluída com sucesso!", "Remoção de Funcionários",
-                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        if (FuncionarioDAO.Alterar(funcionario))
+                        {
 
-                        btnRemover.IsEnabled = true;
-                        btnRemover.Visibility = Visibility.Visible;
-                        btnConcluir.Visibility = Visibility.Hidden;
-                        txtNome.IsEnabled = false;
-                        txtCpf.IsEnabled = false;
+                            MessageBox.Show("Alteração concluída com sucesso!", "Remoção de Funcionários",
+                                MessageBoxButton.OK, MessageBoxImage.Information);
+
+                            btnRemover.IsEnabled = true;
+                            btnRemover.Visibility = Visibility.Visible;
+                            btnConcluir.Visibility = Visibility.Hidden;
+                            txtNome.IsEnabled = false;
+                            txtCpf.IsEnabled = false;
 
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não é possivel alterar um funcionário com prontuários vinculados!", "Remoção de Funcionários",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                            LimparFormulario();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Não é possivel alterar um funcionário com prontuários vinculados!", "Remoção de Funcionários",
+                        MessageBox.Show("O funcionário não existe na base!", "Remoção de Funcionários",
                             MessageBoxButton.OK, MessageBoxImage.Error);
                         LimparFormulario();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("O funcionário não existe na base!", "Remoção de Funcionários",
-                        MessageBoxButton.OK, MessageBoxImage.Error);
-                    LimparFormulario();
+                    MessageBox.Show("A alteração só é possível se for informado um CPF válido!", "Remoção de Funcionários",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
             }
             else
             {

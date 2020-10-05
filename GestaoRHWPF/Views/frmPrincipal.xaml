@@ -24,7 +24,6 @@
                 <MenuItem x:Name="menuBuscarFuncionario" Header="_Funcionario" Click="menuBuscarFuncionario_Click" Background="Black"/>
                 <MenuItem x:Name="menuBuscarCaixa" Header="_Caixa" Click="menuBuscarCaixa_Click" Background="Black"/>
                 <MenuItem x:Name="menuBuscarProntuario" Header="_Prontuario" Click="menuBuscarProntuario_Click" Background="Black"/>
-                <!--<MenuItem x:Name="menuBuscarSolicitacoes" Header="_Solicitacao" Click="menuBuscarSolicitacoes_Click" Background="Black"/>-->
             </MenuItem>
             <MenuItem Header="_Remover" TabIndex="4">
                 <MenuItem x:Name="menuRemoverFuncionario" Header="_Funcionario" Click="menuRemoverFuncionario_Click" Background="Black"/>
