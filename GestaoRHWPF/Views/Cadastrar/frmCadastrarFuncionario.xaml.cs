@@ -19,7 +19,7 @@ namespace GestaoRHWPF.Views.Cadastrar
 
         private void btnCadastrarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && txtMatricula.Text.Length == 5 && txtCpf.Text.Length == 11)
+            if (!string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && txtMatricula.Text.Length == 5 && txtCpf.Text.Length == 11 && !string.IsNullOrWhiteSpace(txtTelefone.Text) && txtTelefone.Text.Length == 10)
             {
                 if (Validacao.ValidarCpf(txtCpf.Text))
                 {
@@ -28,7 +28,9 @@ namespace GestaoRHWPF.Views.Cadastrar
                     {
                         Nome = txtNome.Text,
                         Matricula = txtMatricula.Text,
-                        Cpf = txtCpf.Text
+                        Cpf = txtCpf.Text,
+                        Telefone = txtTelefone.Text
+
                     };
 
                     if (FuncionarioDAO.Cadastrar(funcionario))
@@ -58,6 +60,7 @@ namespace GestaoRHWPF.Views.Cadastrar
             txtNome.Clear();
             txtMatricula.Clear();
             txtCpf.Clear();
+            txtTelefone.Clear();
             txtMatricula.Focus();
         }
 

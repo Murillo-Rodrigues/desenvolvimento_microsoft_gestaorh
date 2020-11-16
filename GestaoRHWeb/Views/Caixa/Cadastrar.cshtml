@@ -1,0 +1,30 @@
+﻿@model Caixa
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar Caixa</title>
+</head>
+<body>
+
+    <form asp-action="Cadastrar" asp-controller="Caixa" method="post">
+        <fieldset>
+            <legend>Cadastro de Caixas</legend>
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <label asp-for="NumeroCaixa">Número da Caixa:</label>
+            <input asp-for="NumeroCaixa" type="text" placeholder="Insira o número da Caixa" />
+            <span asp-validation-for="NumeroCaixa"></span>
+
+            <label asp-for="Custodia">Posição da Custódia:</label>
+            <input asp-for="Custodia" type="text" placeholder="Insira a custódia da Caixa" />
+            <span asp-validation-for="Custodia"></span>
+
+            <input type="submit" value="Cadastrar" />
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestaoRHWPF.Views.Cadastrar"
         mc:Ignorable="d"
-        Title="Cadastrar Funcionários" Height="387" Width="748" WindowStartupLocation="CenterScreen" FontSize="16" FontWeight="Medium">
+        Title="Cadastrar Funcionários" Height="427" Width="750" WindowStartupLocation="CenterScreen" FontSize="16" FontWeight="Medium">
     <Grid>
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="/Images/CadastroFuncionarios.jpg"/>
@@ -16,10 +16,12 @@
         <Label Content="(5 dígitos)" HorizontalAlignment="Left" Margin="665,111,0,0" VerticalAlignment="Top" FontSize="13" FontWeight="Normal" RenderTransformOrigin="0.679,0.481"/>
         <Label Content="Nome:" HorizontalAlignment="Left" Margin="14,146,0,0" VerticalAlignment="Top"/>
         <Label Content="CPF:" HorizontalAlignment="Left" Margin="14,185,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefone:" HorizontalAlignment="Left" Margin="14,221,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Margin="110,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="0" MaxLength="5"/>
         <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="110,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="1"/>
         <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="110,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="2"  MaxLength="11"/>
-        <Button x:Name="btnCadastrarFuncionario" Content="Cadastrar" HorizontalAlignment="Left" Margin="306,262,0,0" VerticalAlignment="Top" Height="59" Width="158" Click="btnCadastrarFuncionario_Click" TabIndex="3" Background="{x:Null}"/>
+        <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Margin="110,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TabIndex="3" MaxLength="10"/>
+        <Button x:Name="btnCadastrarFuncionario" Content="Cadastrar" HorizontalAlignment="Left" Margin="306,314,0,0" VerticalAlignment="Top" Height="59" Width="158" Click="btnCadastrarFuncionario_Click" TabIndex="3" Background="{x:Null}"/>
 
     </Grid>
 </Window>

@@ -1,0 +1,27 @@
+﻿@model Funcionario
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alterar Funcionário</title>
+</head>
+<body>
+    <form asp-action="Alterar" asp-controller="Funcionario" method="post">
+        <fieldset>
+            <legend>Alterar Funcionário</legend>
+
+            <label asp-for="Id">Id:</label>
+            <input asp-for="Id" type="text" placeholder="Id do funcionário" readonly /><br />
+
+            <label asp-for="Nome">Nome:</label>
+            <input asp-for="Nome" type="text" placeholder="Insira o nome de funcionário" /><br />
+
+            <label asp-for="Matricula">Matrícula:</label>
+            <input asp-for="Matricula" type="text" placeholder="Insira a matrícula de funcionário" /><br />
+
+            <input type="submit" value="Salvar" />
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -16,6 +16,7 @@
                 <DataGridTextColumn Header="Matrícula" Width="1*" Binding="{Binding Matricula}"/>
                 <DataGridTextColumn Header="Nome" Width="1*" Binding="{Binding Nome}"/>
                 <DataGridTextColumn Header="CPF" Width="1*" Binding="{Binding Cpf}"/>
+                <DataGridTextColumn Header="Telefone" Width="1*" Binding="{Binding Telefone}"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -23,7 +23,8 @@ namespace GestaoRHWPF.Views.Buscar
             {
                 Matricula = funcionario.Matricula,
                 Nome = funcionario.Nome,
-                Cpf = funcionario.Cpf
+                Cpf = funcionario.Cpf,
+                Telefone = funcionario.Telefone
             };
         }
 

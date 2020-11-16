@@ -27,6 +27,7 @@ namespace GestaoRHWPF.Views.Remover
                     txtMatricula.Text = funcionario.Matricula;
                     txtNome.Text = funcionario.Nome;
                     txtCpf.Text = funcionario.Cpf;
+                    txtTelefone.Text = funcionario.Telefone;
                     txtCriadoEm.Text = funcionario.CriadoEm.ToString();
                     btnRemover.IsEnabled = true;
                     btnAlterar.IsEnabled = true;
@@ -47,7 +48,7 @@ namespace GestaoRHWPF.Views.Remover
 
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtMatricula.Text) || !string.IsNullOrWhiteSpace(txtNome.Text) || !string.IsNullOrWhiteSpace(txtCpf.Text))
+            if (!string.IsNullOrEmpty(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && !string.IsNullOrWhiteSpace(txtTelefone.Text))
             {
                 //funcionario = new Funcionario();
 
@@ -89,13 +90,14 @@ namespace GestaoRHWPF.Views.Remover
             btnConcluir.Visibility = Visibility.Visible;
             txtNome.IsEnabled = true;
             txtCpf.IsEnabled = true;
+            txtTelefone.IsEnabled = true;
             btnConcluir.IsEnabled = true;
 
         }
 
         private void btnConcluir_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && txtMatricula.Text.Length == 5 && txtCpf.Text.Length == 11)
+            if (!string.IsNullOrEmpty(txtMatricula.Text) && !string.IsNullOrWhiteSpace(txtNome.Text) && !string.IsNullOrWhiteSpace(txtCpf.Text) && txtMatricula.Text.Length == 5 && txtCpf.Text.Length == 11 && !string.IsNullOrWhiteSpace(txtTelefone.Text) && txtTelefone.Text.Length == 10)
             {
                 if (Validacao.ValidarCpf(txtCpf.Text))
                 {
@@ -108,6 +110,7 @@ namespace GestaoRHWPF.Views.Remover
                         funcionario.Matricula = txtMatricula.Text;
                         funcionario.Cpf = txtCpf.Text;
                         funcionario.Nome = txtNome.Text;
+                        funcionario.Telefone = txtTelefone.Text;
 
                         if (FuncionarioDAO.Alterar(funcionario))
                         {
@@ -120,6 +123,7 @@ namespace GestaoRHWPF.Views.Remover
                             btnConcluir.Visibility = Visibility.Hidden;
                             txtNome.IsEnabled = false;
                             txtCpf.IsEnabled = false;
+                            txtTelefone.IsEnabled = false;
 
 
                         }
@@ -157,6 +161,7 @@ namespace GestaoRHWPF.Views.Remover
             txtNome.Clear();
             txtMatricula.Clear();
             txtCpf.Clear();
+            txtTelefone.Clear();
             txtCriadoEm.Clear();
             txtMatricula.Focus();
         }
