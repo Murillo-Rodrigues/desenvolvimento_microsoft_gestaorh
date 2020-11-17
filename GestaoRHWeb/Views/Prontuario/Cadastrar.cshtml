@@ -13,15 +13,19 @@
         <fieldset>
             <legend>Cadastro de Prontuários</legend>
 
-            <label asp-for="Funcionario">Matrículas:</label>
-            <select asp-items="@ViewBag.listaMatriculas" asp-for="Funcionario">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <label asp-for="FuncionarioId">Matrículas:</label>
+            <select asp-items="@ViewBag.listaMatriculas" asp-for="FuncionarioId">
                 <option> -- SELECIONE -- </option>
             </select>
 
-            <label asp-for="Caixa">Custódias:</label>
-            <select asp-items="@ViewBag.listaCustodias" asp-for="Caixa">
+
+            <label asp-for="CaixaId">Custódias:</label>
+            <select asp-items="@ViewBag.listaCustodias" asp-for="CaixaId">
                 <option> -- SELECIONE -- </option>
             </select>
+
 
             <input type="submit" value="Cadastrar" />
         </fieldset>

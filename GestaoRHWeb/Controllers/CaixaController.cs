@@ -1,22 +1,24 @@
-﻿using GestaoRHWeb.Models;
+﻿using GestaoRHWeb.DAL;
+using GestaoRHWeb.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GestaoRHWeb.Controllers
 {
     public class CaixaController : Controller
     {
-        private readonly Context _context;
+        private readonly CaixaDAO _caixaDAO;
 
-        public CaixaController(Context context)
-        {
-            _context = context;
-        }
+        public CaixaController(CaixaDAO caixaDAO) => _caixaDAO = caixaDAO;
+
 
         /* ------------------- INDEX ------------------- */
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View();
+            List<Caixa> caixas = _caixaDAO.Listar();
+            ViewBag.QuantidadeRegistros = caixas.Count();
+            return View(caixas);
         }
 
 
@@ -29,7 +31,14 @@ namespace GestaoRHWeb.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Caixa caixa)
         {
-
+            if (ModelState.IsValid)
+            {
+                if (_caixaDAO.Cadastrar(caixa))
+                {
+                    return RedirectToAction("Index", "Caixa");
+                }
+                ModelState.AddModelError("", "Não foi possível cadastrar a caixa!");
+            }
             return View(caixa);
         }
 
@@ -37,8 +46,8 @@ namespace GestaoRHWeb.Controllers
         [HttpPost]
         public IActionResult Remover(int id)
         {
-
-            return RedirectToAction(nameof(Index));
+            _caixaDAO.Remover(id);
+            return RedirectToAction("Index", "Caixa");
         }
 
 

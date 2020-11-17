@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GestaoRHWeb.Models
 {
-    [Table("Funcionários")]
+    [Table("Funcionarios")]
     public class Funcionario : BaseModel
     {
         [Required(ErrorMessage = "Campo obrigatório!")]
@@ -12,6 +12,8 @@ namespace GestaoRHWeb.Models
         public string Matricula { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório!")]
+        [MinLength(11, ErrorMessage = "Necessário CPF conter 11 dígitos!")]
+        [MaxLength(11)]
         public string Cpf { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório!")]

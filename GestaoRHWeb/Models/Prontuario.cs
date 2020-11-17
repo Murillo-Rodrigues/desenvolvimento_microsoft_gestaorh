@@ -11,8 +11,13 @@ namespace GestaoRHWeb.Models
             Caixa = new Caixa();
         }
 
+        [ForeignKey("FuncionarioId")]
         public Funcionario Funcionario { get; set; }
+        public int FuncionarioId { get; set; }
+
+        [ForeignKey("CaixaId")]
         public Caixa Caixa { get; set; }
+        public int CaixaId { get; set; }
 
     }
 }
