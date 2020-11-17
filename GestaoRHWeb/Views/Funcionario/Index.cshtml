@@ -14,7 +14,7 @@
     <h2>Gerenciamento de Funcionários</h2>
     <a asp-action="Index" asp-controller="Funcionario">Tabela Funcionários</a><br />
     <a asp-action="Index" asp-controller="Caixa">Tabela Caixas</a><br />
-    <a asp-action="Index" asp-controller="Prontuario">Tabela Prontuários (Não implementado)</a><br /><br />
+    <a asp-action="Index" asp-controller="Prontuario">Tabela Prontuários</a><br /><br />
 
     <a asp-action="Cadastrar" asp-controller="Funcionario">Cadastrar Funcionário</a><br />
     <a asp-action="Cadastrar" asp-controller="Caixa">Cadastrar Caixa</a><br />
@@ -44,8 +44,7 @@
         <td>@funcionarioCadastrado.CriadoEm</td>
         <td><a asp-action="Remover" asp-controller="Funcionario" asp-route-id="@funcionarioCadastrado.Id"> Remover</a></td>
         <td><a asp-action="Alterar" asp-controller="Funcionario" asp-route-id="@funcionarioCadastrado.Id"> Alterar</a></td>
-    </tr>
-}
+    </tr>}
             </tbody>
         </table>
     </fieldset>

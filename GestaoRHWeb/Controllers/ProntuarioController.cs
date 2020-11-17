@@ -2,6 +2,8 @@
 using GestaoRHWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GestaoRHWeb.Controllers
 {
@@ -24,9 +26,9 @@ namespace GestaoRHWeb.Controllers
         /* ------------------- INDEX ------------------- */
         public IActionResult Index()
         {
-
-
-            return View();
+            List<Prontuario> prontuarios = _prontuarioDAO.Listar();
+            ViewBag.QuantidadeRegistros = prontuarios.Count();
+            return View(prontuarios);
         }
 
 
@@ -53,10 +55,13 @@ namespace GestaoRHWeb.Controllers
                 {
                     return RedirectToAction("Index", "Funcionario");
                 }
-                ModelState.AddModelError("", "Não foi possível cadastrar o prontuário!");
+                ModelState.AddModelError("", "Não foi possível realizar o cadastro! Dados já vinculados em outro prontuário!");
                 //}
             }
-            ModelState.AddModelError("", "Não é possível cadastrar um prontuário com um ou mais dados nulos! Por favor, selecione uma matrícula e uma custódia!");
+            else
+            {
+                ModelState.AddModelError("", "Não é possível cadastrar um prontuário com um ou mais dados nulos! Por favor, selecione uma matrícula e uma custódia!");
+            }
             ViewBag.listaMatriculas = new SelectList(_funcionarioDAO.Listar(), "Id", "Matricula");
             ViewBag.listaCustodias = new SelectList(_caixaDAO.Listar(), "Id", "Custodia");
 
@@ -67,16 +72,17 @@ namespace GestaoRHWeb.Controllers
         [HttpPost]
         public IActionResult Remover(int id)
         {
-
-            return RedirectToAction(nameof(Index));
+            _prontuarioDAO.Remover(id);
+            return RedirectToAction("Index", "Prontuario");
         }
 
 
         /* ------------------- ALTERAR ------------------- */
         public IActionResult Alterar(int id)
         {
-
-            return View();
+            ViewBag.listaMatriculas = new SelectList(_funcionarioDAO.Listar(), "Id", "Matricula", id);
+            ViewBag.listaCustodias = new SelectList(_caixaDAO.Listar(), "Id", "Custodia", id);
+            return View(_prontuarioDAO.BuscarPorId(id));
         }
 
 
@@ -84,8 +90,10 @@ namespace GestaoRHWeb.Controllers
 
         public IActionResult Alterar(Prontuario prontuario)
         {
-
-            return View();
+            prontuario.Funcionario = _funcionarioDAO.BuscarPorId(prontuario.FuncionarioId);
+            prontuario.Caixa = _caixaDAO.BuscarPorId(prontuario.CaixaId);
+            _prontuarioDAO.Alterar(prontuario);
+            return RedirectToAction("Index", "Prontuario");
         }
 
     }

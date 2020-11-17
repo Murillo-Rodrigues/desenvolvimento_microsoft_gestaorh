@@ -1,50 +1,33 @@
-﻿@model GestaoRHWeb.Models.Caixa
-
-@{
-    Layout = null;
-}
-
+﻿@model Caixa
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <title>Alterar Caixa</title>
 </head>
 <body>
 
-<h4>Caixa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NumeroCaixa" class="control-label"></label>
-                <input asp-for="NumeroCaixa" class="form-control" />
-                <span asp-validation-for="NumeroCaixa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Custodia" class="control-label"></label>
-                <input asp-for="Custodia" class="form-control" />
-                <span asp-validation-for="Custodia" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="CriadoEm" class="control-label"></label>
-                <input asp-for="CriadoEm" class="form-control" />
-                <span asp-validation-for="CriadoEm" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    <form asp-action="Alterar" asp-controller="Caixa" method="post">
+        <fieldset>
+            <legend>Alterar Caixa</legend>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <label asp-for="Id">Id:</label>
+            <input asp-for="Id" type="text" placeholder="Id da caixa" readonly />
+
+
+            <label asp-for="NumeroCaixa">Número da Caixa:</label>
+            <input asp-for="NumeroCaixa" type="number" placeholder="Insira o número da caixa" />
+
+
+            <label asp-for="Custodia">Posição da Custódia:</label>
+            <input asp-for="Custodia" type="text" placeholder="Insira a posição da custódia" />
+
+            <input type="submit" value="Salvar" />
+        </fieldset>
+    </form>
 
 </body>
 </html>

@@ -43,7 +43,6 @@ namespace GestaoRHWeb.Controllers
         }
 
         /* ------------------- REMOVER ------------------- */
-        [HttpPost]
         public IActionResult Remover(int id)
         {
             _caixaDAO.Remover(id);
@@ -55,7 +54,7 @@ namespace GestaoRHWeb.Controllers
         public IActionResult Alterar(int id)
         {
 
-            return View();
+            return View(_caixaDAO.BuscarPorId(id));
         }
 
 
@@ -63,8 +62,8 @@ namespace GestaoRHWeb.Controllers
 
         public IActionResult Alterar(Caixa caixa)
         {
-
-            return View(caixa);
+            _caixaDAO.Alterar(caixa);
+            return RedirectToAction("Index", "Caixa");
         }
 
 

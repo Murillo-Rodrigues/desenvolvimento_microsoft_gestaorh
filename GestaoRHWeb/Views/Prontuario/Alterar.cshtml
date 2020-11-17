@@ -1,40 +1,33 @@
-﻿@model GestaoRHWeb.Models.Prontuario
-
-@{
-    Layout = null;
-}
+﻿@model Prontuario
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <title>Alterar Prontuário</title>
 </head>
 <body>
+    <form asp-action="Alterar" asp-controller="Prontuario" method="post">
+        <fieldset>
+            <legend>Alterar Prontuário</legend>
 
-<h4>Prontuario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="CriadoEm" class="control-label"></label>
-                <input asp-for="CriadoEm" class="form-control" />
-                <span asp-validation-for="CriadoEm" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+            <div asp-validation-summary="ModelOnly"></div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <label asp-for="Id">Id:</label>
+            <input asp-for="Id" type="text" placeholder="Id do prontuário" readonly />
 
+            <label asp-for="FuncionarioId">Matrícula:</label>
+            <select asp-items="@ViewBag.listaMatriculas" asp-for="FuncionarioId" disabled></select>
+            <input hidden asp-for="FuncionarioId" />
+
+
+
+            <label asp-for="CaixaId">Custódia:</label>
+            <select asp-items="@ViewBag.listaCustodias" asp-for="CaixaId"></select>
+
+            <input type="submit" value="Salvar" />
+        </fieldset>
+    </form>
 </body>
 </html>
