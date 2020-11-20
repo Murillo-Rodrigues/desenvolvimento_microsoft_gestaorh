@@ -24,6 +24,8 @@ namespace GestaoRHWeb
             services.AddScoped<FuncionarioDAO>();
             services.AddScoped<CaixaDAO>();
             services.AddScoped<ProntuarioDAO>();
+            services.AddScoped<SolicitacaoDAO>();
+            services.AddScoped<ItemSolicitacaoDAO>();
 
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")));
 

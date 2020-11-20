@@ -1,34 +1,30 @@
 ﻿@model Funcionario
 
-<!DOCTYPE html>
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<br />
+<br />
+<br />
+<br />
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Cadastrar Funcionário</title>
-</head>
-<body>
-    <form asp-action="Cadastrar" asp-controller="Funcionario" method="post">
-        <fieldset>
-            <legend>Cadastro de Funcionários</legend>
+<form asp-action="Cadastrar" asp-controller="Funcionario" method="post">
+    <fieldset>
+        <legend>Cadastro de Funcionários</legend>
 
-            <div asp-validation-summary="ModelOnly"></div>
+        <div asp-validation-summary="ModelOnly"></div>
 
-            <label asp-for="Matricula">Matrícula:</label>
-            <input asp-for="Matricula" type="text" placeholder="Insira a matrícula de funcionário" />
-            <span asp-validation-for="Matricula"></span>
+        <label asp-for="Matricula">Matrícula:</label>
+        <input asp-for="Matricula" type="text" placeholder="Insira a matrícula de funcionário" />
+        <span asp-validation-for="Matricula"></span>
 
-            <label asp-for="Cpf">CPF:</label>
-            <input asp-for="Cpf" type="text" placeholder="Insira o CPF do funcionário " />
-            <span asp-validation-for="Cpf"></span>
+        <label asp-for="Cpf">CPF:</label>
+        <input asp-for="Cpf" type="text" placeholder="Insira o CPF do funcionário " />
+        <span asp-validation-for="Cpf"></span>
 
-            <label asp-for="Nome">Nome:</label>
-            <input asp-for="Nome" type="text" placeholder="Insira o nome de funcionário" />
-            <span asp-validation-for="Nome"></span>
+        <label asp-for="Nome">Nome:</label>
+        <input asp-for="Nome" type="text" placeholder="Insira o nome de funcionário" />
+        <span asp-validation-for="Nome"></span>
 
 
-            <input type="submit" value="Cadastrar" />
-        </fieldset>
-    </form>
-</body>
-</html>
+        <input type="submit" value="Cadastrar" />
+    </fieldset>
+</form>
