@@ -1,0 +1,35 @@
+﻿@model Solicitacao
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar Solicitação</title>
+</head>
+<body>
+
+    <form asp-action="Cadastrar" asp-controller="Solicitacao" method="post">
+        <fieldset>
+            <legend>Cadastro de Solicitações</legend>
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <label asp-for="Funcionario.Id">Matrículas:</label>
+            <select asp-items="@ViewBag.listaMatriculas" asp-for="Funcionario.Id">
+                <option> -- SELECIONE -- </option>
+            </select>
+
+
+            <label asp-for="Caixa.Id">Custódias:</label>
+            <select asp-items="@ViewBag.listaCustodias" asp-for="Caixa.Id">
+                <option> -- SELECIONE -- </option>
+            </select>
+
+
+            <input type="submit" value="Cadastrar" />
+        </fieldset>
+    </form>
+
+</body>
+</html>

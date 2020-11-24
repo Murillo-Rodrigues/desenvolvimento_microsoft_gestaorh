@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GestaoRHWeb.Migrations
 {
-    public partial class criarBanco : Migration
+    public partial class CriarBD : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,8 @@ namespace GestaoRHWeb.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CriadoEm = table.Column<DateTime>(nullable: false),
-                    NumeroCaixa = table.Column<string>(nullable: false),
-                    Custodia = table.Column<string>(nullable: false)
+                    NumeroCaixa = table.Column<string>(maxLength: 9, nullable: false),
+                    Custodia = table.Column<string>(maxLength: 3, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -36,6 +36,21 @@ namespace GestaoRHWeb.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Funcionarios", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CriadoEm = table.Column<DateTime>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Senha = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +169,9 @@ namespace GestaoRHWeb.Migrations
         {
             migrationBuilder.DropTable(
                 name: "ItensSolicitacao");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Prontuarios");

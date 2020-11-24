@@ -5720,19 +5720,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lillo\\.nuget\\packages\\": {}
+    "C:\\Users\\leandro.rosa.LA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CDEV\\GestaoRH\\GestaoRHWPF\\GestaoRHWPF.csproj",
+      "projectUniqueName": "C:\\Users\\leandro.rosa.LA\\Desktop\\Atalhos\\Análise_Desenvolvimento_Sistemas\\Desenvolvimento_Microsoft\\GestaoRHWeb\\GestaoRHWPF\\GestaoRHWPF.csproj",
       "projectName": "GestaoRHWPF",
-      "projectPath": "C:\\CDEV\\GestaoRH\\GestaoRHWPF\\GestaoRHWPF.csproj",
-      "packagesPath": "C:\\Users\\lillo\\.nuget\\packages\\",
-      "outputPath": "C:\\CDEV\\GestaoRH\\GestaoRHWPF\\obj\\",
+      "projectPath": "C:\\Users\\leandro.rosa.LA\\Desktop\\Atalhos\\Análise_Desenvolvimento_Sistemas\\Desenvolvimento_Microsoft\\GestaoRHWeb\\GestaoRHWPF\\GestaoRHWPF.csproj",
+      "packagesPath": "C:\\Users\\leandro.rosa.LA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leandro.rosa.LA\\Desktop\\Atalhos\\Análise_Desenvolvimento_Sistemas\\Desenvolvimento_Microsoft\\GestaoRHWeb\\GestaoRHWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leandro.rosa.LA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5777,6 +5777,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
